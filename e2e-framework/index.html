@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test E-Commerce</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .form-group { margin: 10px 0; }
+        input, button { padding: 8px; margin: 5px; }
+        .error { color: red; }
+        .success { color: green; }
+        .product { border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Страница логина -->
+        <div id="login-page">
+            <h1>Login to Test Shop</h1>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" value="testuser">
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Password" value="password123">
+            </div>
+            <button onclick="login()">Login</button>
+            <div id="login-error" class="error hidden">Invalid credentials!</div>
+        </div>
+
+        <!-- Главная страница после логина -->
+        <div id="main-page" class="hidden">
+            <h1>Welcome to Our Shop, <span id="user-name"></span>!</h1>
+            
+            <!-- Продукты -->
+            <div class="product">
+                <h3>Product 1 - $19.99</h3>
+                <button onclick="addToCart(1)">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>Product 2 - $29.99</h3>
+                <button onclick="addToCart(2)">Add to Cart</button>
+            </div>
+            
+            <!-- Корзина -->
+            <div id="cart-section">
+                <h2>Shopping Cart (<span id="cart-count">0</span> items)</h2>
+                <div id="cart-items"></div>
+                <button onclick="checkout()" id="checkout-btn" class="hidden">Checkout</button>
+            </div>
+
+            <button onclick="logout()" style="margin-top: 20px;">Logout</button>
+        </div>
+
+        <!-- Страница подтверждения заказа -->
+        <div id="checkout-page" class="hidden">
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for your purchase.</p>
+            <button onclick="backToShop()">Back to Shop</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'testuser' && password === 'password123') {
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('main-page').classList.remove('hidden');
+                document.getElementById('user-name').textContent = username;
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+        
+        function logout() {
+            cart = [];
+            updateCart();
+            document.getElementById('main-page').classList.add('hidden');
+            document.getElementById('checkout-page').classList.add('hidden');
+            document.getElementById('login-page').classList.remove('hidden');
+            document.getElementById('login-error').classList.add('hidden');
+        }
+        
+        function addToCart(productId) {
+            cart.push(productId);
+            updateCart();
+        }
+        
+        function updateCart() {
+            document.getElementById('cart-count').textContent = cart.length;
+            document.getElementById('cart-items').innerHTML = cart.map(id => 
+                `<div>Product ${id} <button onclick="removeFromCart(${id})">Remove</button></div>`
+            ).join('');
+            
+            document.getElementById('checkout-btn').classList.toggle('hidden', cart.length === 0);
+        }
+        
+        function removeFromCart(productId) {
+            const index = cart.indexOf(productId);
+            if (index > -1) {
+                cart.splice(index, 1);
+                updateCart();
+            }
+        }
+        
+        function checkout() {
+            document.getElementById('main-page').classList.add('hidden');
+            document.getElementById('checkout-page').classList.remove('hidden');
+            cart = [];
+        }
+        
+        function backToShop() {
+            document.getElementById('checkout-page').classList.add('hidden');
+            document.getElementById('main-page').classList.remove('hidden');
+            updateCart();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+services:
+  e2e-tests:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../reports:/app/reports
+    command: ["pytest", "-v", "--alluredir=reports/allure"]
