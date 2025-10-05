@@ -1,4 +1,7 @@
+base_url: "https://example.com/"
 browser: "chromium"
 headless: true
 timeouts:
-  default: 10000
+  default: 5000
+record_video: false
+trace: true
