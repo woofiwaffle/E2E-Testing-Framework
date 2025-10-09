@@ -1,6 +1,13 @@
 version: '3.9'
 
 services:
+  demo-app:
+    build:
+      context: ./demo-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
   e2e-tests:
     build:
       context: ..
