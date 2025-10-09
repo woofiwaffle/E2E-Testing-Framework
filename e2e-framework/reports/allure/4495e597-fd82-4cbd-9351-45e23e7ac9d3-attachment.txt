@@ -1,0 +1,2 @@
+INFO     BrowserFactory:browser_factory.py:25 Launching chromium headless=True video=False trace=False
+INFO     BasePage:base_page.py:13 Открываю страницу: http://demo-app:3000/

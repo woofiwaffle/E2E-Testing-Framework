@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Demo App</title>
 </head>
 <body>
   <h1>Demo Home Page</h1>
-  <input id="demo" type="text" placeholder="Type something"/>
-  <button id="demo">Click me</button>
+
+  <div>
+    <label for="demo-input">Demo input:</label>
+    <input id="demo-input" type="text" placeholder="Type something"/>
+  </div>
+
+  <div>
+    <button id="demo-button">Click me</button>
+  </div>
+
+  <script>
+    document.getElementById('demo-button').addEventListener('click', () => {
+      const val = document.getElementById('demo-input').value;
+      console.log('Demo button clicked. Input:', val);
+      alert('You entered: ' + val);
+    });
+  </script>
 </body>
 </html>

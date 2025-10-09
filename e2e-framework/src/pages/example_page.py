@@ -4,25 +4,24 @@ from src.components.input import Input
 
 class ExamplePage(BasePage):
     """
-    Пример страницы, которая использует компоненты.
+    Страница demo-app с компонентами.
     """
     HEADER = "h1"
-    BUTTON_DEMO = "button#demo"
-    INPUT_DEMO = "input#demo"
+    INPUT_DEMO = "input#demo-input"
+    BUTTON_DEMO = "button#demo-button"
 
     def __init__(self, page, base_url):
         super().__init__(page, base_url)
-        self.button = Button(page, base_url)
         self.input = Input(page, base_url)
+        self.button = Button(page, base_url)
 
     def open_home(self):
         self.open("/")
         self.page.wait_for_load_state("networkidle")
+        self.page.wait_for_selector(self.HEADER)
 
     def header_text(self) -> str:
-        if self.is_visible(self.HEADER):
-            return self.text(self.HEADER)
-        return ""
+        return self.text(self.HEADER)
 
     def fill_demo_input(self, value: str):
         self.input.fill(self.INPUT_DEMO, value)

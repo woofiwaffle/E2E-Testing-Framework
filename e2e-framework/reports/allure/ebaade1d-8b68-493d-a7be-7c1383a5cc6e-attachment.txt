@@ -1,0 +1,2 @@
+[2025-10-09 19:00:00,644] INFO:BrowserFactory: Launching chromium headless=True video=False trace=False
+[2025-10-09 19:00:01,334] INFO:BasePage: Открываю страницу: http://demo-app:3000/
