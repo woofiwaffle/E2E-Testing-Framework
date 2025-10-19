@@ -1,4 +1,3 @@
-# src/core/browser_factory.py
 from playwright.sync_api import sync_playwright, Browser, Page, Playwright, BrowserContext
 from typing import Tuple, Optional
 from src.utils.config_reader import get_config
@@ -36,7 +35,10 @@ def open_page(test_name: Optional[str] = None) -> Tuple[Playwright, Browser, Bro
     artifacts["test_dir"] = test_dir
 
     if record_video:
-        context_args["record_video_dir"] = test_dir
+        video_dir = os.path.join(test_dir, "video")
+        os.makedirs(video_dir, exist_ok=True)
+        context_args["record_video_dir"] = video_dir
+        artifacts["video_dir"] = video_dir
 
     context = browser.new_context(**context_args)
     page = context.new_page()

@@ -9,3 +9,6 @@ def test_home_page_with_components(browser_ctx, config):
 
     example_page.fill_demo_input("Hello Components")
     example_page.click_demo_button()
+
+    result = example_page.wait_for_result_text("Hello Components", timeout=10000)
+    assert "Hello Components" in result

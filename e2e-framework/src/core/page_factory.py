@@ -1,4 +1,3 @@
-# src/core/page_factory.py
 from src.pages.example_page import ExamplePage
 
 class PageFactory:

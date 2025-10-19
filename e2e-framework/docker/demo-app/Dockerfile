@@ -2,10 +2,13 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-COPY public /app/public
+RUN apk add --no-cache curl
 
-RUN npm install express
+COPY package.json ./
+RUN npm install --production
 
-COPY server.js /app/server.js
+COPY server.js ./
+COPY public ./public
 
-CMD ["node", "server.js"]
+EXPOSE 3000
+CMD ["npm", "start"]
