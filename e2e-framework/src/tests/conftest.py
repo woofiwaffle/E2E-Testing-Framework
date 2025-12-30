@@ -6,6 +6,7 @@ from src.core.browser_factory import open_page
 from src.utils.config_reader import get_config
 from src.pages.example_page import ExamplePage
 from src.utils.artifacts_helper import save_screenshot, save_page_source, list_videos
+from src.utils.allure_helper import attach_screenshot, attach_page_source
 
 @pytest.fixture(scope="session")
 def config():
@@ -100,5 +101,7 @@ def pytest_runtest_makereport(item, call):
             try:
                 save_screenshot(page, artifacts["test_dir"], name=f"{item.name}_failure")
                 save_page_source(page, artifacts["test_dir"], name=f"{item.name}_source")
+                attach_screenshot(page, name=f"{item.name}_allure_failure")
+                attach_page_source(page, name=f"{item.name}_allure_source")
             except Exception as e:
                 print("Failed to save artifacts:", e)
