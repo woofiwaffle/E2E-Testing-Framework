@@ -3,7 +3,8 @@
 ### Root
 
 - `.github/workflows/` — GitHub Actions CI/CD pipelines
-  - `e2e-tests.yml`
+  - `allure-ci.yml` — builds, runs tests with Allure, generates a report and uploads it as an artifact
+  - `e2e-tests.yml` — existing end‑to‑end test workflow
 
 - `.dockerignore`
 - `.gitignore` 
