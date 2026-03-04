@@ -13,9 +13,6 @@ services:
   e2e-demoapp:
     build: ./e2e-framework
     container_name: e2e-tests-demoapp
-    depends_on:
-      demo-app:
-        condition: service_healthy
     entrypoint: ["bash", "entrypoint.sh"]
     environment:
       CONFIG_FILE: demoapp.docker.yaml

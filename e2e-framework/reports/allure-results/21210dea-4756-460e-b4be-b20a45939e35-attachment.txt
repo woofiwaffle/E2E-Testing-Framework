@@ -1,0 +1,9 @@
+2026-03-04 20:39:12 [[32mINFO[0m] conftest: ================================================================================
+2026-03-04 20:39:12 [[32mINFO[0m] conftest: START TEST: src/tests/demoapp/test_api/test_api_echo.py::test_api_echo_endpoint
+2026-03-04 20:39:12 [[32mINFO[0m] src.utils.api_client: API POST http://localhost:3000/api/echo
+2026-03-04 20:39:12 [[35mDEBUG[0m] src.utils.api_client: Request JSON: {'text': 'Test API'}
+2026-03-04 20:39:12 [[35mDEBUG[0m] urllib3.connectionpool: Starting new HTTP connection (1): localhost:3000
+2026-03-04 20:39:12 [[35mDEBUG[0m] urllib3.connectionpool: http://localhost:3000 "POST /api/echo HTTP/1.1" 200 55
+2026-03-04 20:39:12 [[32mINFO[0m] src.utils.api_client: API response 200 http://localhost:3000/api/echo
+2026-03-04 20:39:12 [[35mDEBUG[0m] src.utils.api_client: Response body: {"status":"success","message":"echo","data":"Test API"}
+2026-03-04 20:39:12 [[32mINFO[0m] conftest: END TEST: src/tests/demoapp/test_api/test_api_echo.py::test_api_echo_endpoint

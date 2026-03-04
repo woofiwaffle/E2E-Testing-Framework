@@ -1,0 +1,16 @@
+2026-03-04 20:40:02 [[32mINFO[0m] conftest: ================================================================================
+2026-03-04 20:40:02 [[32mINFO[0m] conftest: START TEST: src/tests/demoapp/test_ui/test_simple_form.py::test_simple_form_field_clearing
+2026-03-04 20:40:02 [[32mINFO[0m] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 20:40:02 [[32mINFO[0m] src.core.browser_factory: Starting Playwright
+2026-03-04 20:40:02 [[35mDEBUG[0m] asyncio: Using proactor: IocpProactor
+2026-03-04 20:40:03 [[35mDEBUG[0m] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 20:40:03 [[35mDEBUG[0m] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 20:40:03 [[35mDEBUG[0m] src.core.browser_factory: Opening new page
+2026-03-04 20:40:03 [[35mDEBUG[0m] src.core.browser_factory: Browser page ready
+2026-03-04 20:40:03 [[32mINFO[0m] src.pages.base_page: Open URL: http://localhost:3000/
+2026-03-04 20:40:04 [[32mINFO[0m] src.pages.base_page: Wait for network idle
+2026-03-04 20:40:04 [[32mINFO[0m] src.pages.base_page: Wait visible: h1
+2026-03-04 20:40:05 [[32mINFO[0m] src.pages.base_page: Fill element: #simple-input with value='Test Input'
+2026-03-04 20:40:06 [[32mINFO[0m] src.pages.base_page: Click element: button[type='submit']
+2026-03-04 20:40:06 [[32mINFO[0m] src.pages.base_page: Input value from #simple-input:
+2026-03-04 20:40:07 [[32mINFO[0m] conftest: END TEST: src/tests/demoapp/test_ui/test_simple_form.py::test_simple_form_field_clearing

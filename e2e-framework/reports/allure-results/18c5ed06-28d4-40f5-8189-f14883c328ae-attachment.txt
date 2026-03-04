@@ -1,0 +1,16 @@
+2026-03-04 20:39:52 [[32mINFO[0m] conftest: ================================================================================
+2026-03-04 20:39:52 [[32mINFO[0m] conftest: START TEST: src/tests/demoapp/test_ui/test_modal_toast.py::test_toast_disappear
+2026-03-04 20:39:52 [[32mINFO[0m] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 20:39:52 [[32mINFO[0m] src.core.browser_factory: Starting Playwright
+2026-03-04 20:39:52 [[35mDEBUG[0m] asyncio: Using proactor: IocpProactor
+2026-03-04 20:39:53 [[35mDEBUG[0m] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 20:39:53 [[35mDEBUG[0m] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 20:39:53 [[35mDEBUG[0m] src.core.browser_factory: Opening new page
+2026-03-04 20:39:53 [[35mDEBUG[0m] src.core.browser_factory: Browser page ready
+2026-03-04 20:39:53 [[32mINFO[0m] src.pages.base_page: Open URL: http://localhost:3000/
+2026-03-04 20:39:54 [[32mINFO[0m] src.pages.base_page: Wait for network idle
+2026-03-04 20:39:54 [[32mINFO[0m] src.pages.base_page: Wait visible: h1
+2026-03-04 20:39:55 [[32mINFO[0m] src.pages.base_page: Click element: button#show-toast
+2026-03-04 20:39:55 [[32mINFO[0m] src.pages.base_page: Wait hidden: #demo-toast
+2026-03-04 20:39:58 [[32mINFO[0m] src.pages.base_page: Is visible #demo-toast -> False
+2026-03-04 20:39:58 [[32mINFO[0m] conftest: END TEST: src/tests/demoapp/test_ui/test_modal_toast.py::test_toast_disappear
