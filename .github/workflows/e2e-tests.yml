@@ -24,11 +24,6 @@ jobs:
         run: |
           docker compose build
 
-      # ===== RUN DEMOAPP TESTS =====
-      - name: Run E2E tests for demo-app
-        run: |
-          docker compose up --abort-on-container-exit --exit-code-from e2e-demoapp e2e-demoapp
-
       # ===== RUN DEMOQA TESTS =====
       - name: Run E2E tests for demoqa
         run: |

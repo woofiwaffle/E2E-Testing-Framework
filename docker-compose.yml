@@ -30,7 +30,7 @@ services:
     environment:
       CONFIG_FILE: demoqa.local.yaml
       PYTEST_MARK: app_demoqa
-      SKIP_WAIT: "1"               
+      SKIP_WAIT: "1"
     volumes:
       - ./e2e-framework/reports:/app/reports
       - ./e2e-framework/logs:/app/logs
