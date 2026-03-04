@@ -22,20 +22,25 @@ jobs:
       # ===== BUILD IMAGES =====
       - name: Build Docker images
         run: |
-          docker compose build
+          docker compose build e2e-framework
 
       # ===== RUN DEMOQA TESTS =====
       - name: Run E2E tests for demoqa
         run: |
-          docker compose up --abort-on-container-exit --exit-code-from e2e-demoqa e2e-demoqa
+          docker compose run --rm e2e-demoqa
 
-      # ===== UPLOAD ALLURE RESULTS =====
-      - name: Upload Allure results
+      # ===== GENERATE ALLURE REPORT =====
+      - name: Generate Allure report
+        run: |
+          docker run --rm -v $(pwd)/e2e-framework/reports:/app/reports -w /app/reports allure-framework/allure-cli generate allure-results --clean -o allure-report
+
+      # ===== UPLOAD ALLURE REPORT =====
+      - name: Upload Allure report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: allure-results
-          path: e2e-framework/reports/allure-results
+          name: allure-report
+          path: e2e-framework/reports/allure-report
 
       # ===== CLEANUP =====
       - name: Docker cleanup
