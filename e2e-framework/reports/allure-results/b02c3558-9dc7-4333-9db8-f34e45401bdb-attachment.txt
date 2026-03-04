@@ -1,0 +1,53 @@
+demoqa_form_page = <src.pages.demoqa_page.DemoQAFormPage object at 0x00000218B6285430>
+
+    @pytest.mark.app_demoqa
+    @pytest.mark.ui
+    @pytest.mark.regression
+    @pytest.mark.priority_medium
+    @pytest.mark.severity_normal
+    @allure.description("WHEN user selects state THEN city list should update")
+    def test_demoqa_state_city_dependency(demoqa_form_page):
+        # prepare
+>       demoqa_form_page.open()
+
+src\tests\demoqa\test_ui\test_demoqa_form.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src\pages\demoqa_page.py:17: in open
+    super().open("/automation-practice-form")
+src\pages\base_page.py:17: in open
+    self.page.goto(url, wait_until="domcontentloaded")
+.venv\Lib\site-packages\playwright\sync_api\_generated.py:9050: in goto
+    self._sync(
+.venv\Lib\site-packages\playwright\_impl\_page.py:552: in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\playwright\_impl\_frame.py:153: in goto
+    await self._channel.send(
+.venv\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x00000218B61F1FA0>
+cb = <function Channel.send.<locals>.<lambda> at 0x00000218B60E02C0>, is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Page.goto: Timeout 10000ms exceeded.
+E           Call log:
+E             - navigating to "https://demoqa.com/automation-practice-form", waiting until "domcontentloaded"
+
+.venv\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError

@@ -1,11 +1,11 @@
-2026-03-04 13:44:49 [INFO] conftest: ================================================================================
-2026-03-04 13:44:49 [INFO] conftest: START TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_home_available
-2026-03-04 13:44:49 [INFO] src.utils.config_reader: Loaded config: config/demoqa.local.yaml
-2026-03-04 13:44:49 [INFO] src.utils.api_client: API GET https://demoqa.com/
-2026-03-04 13:44:49 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): demoqa.com:443
-2026-03-04 13:44:49 [DEBUG] urllib3.connectionpool: https://demoqa.com:443 "GET / HTTP/1.1" 200 None
-2026-03-04 13:44:49 [INFO] src.utils.api_client: API response 200 https://demoqa.com/
-2026-03-04 13:44:49 [DEBUG] src.utils.api_client: Response body: <!doctype html>
+2026-03-04 19:34:17 [INFO] conftest: ================================================================================
+2026-03-04 19:34:17 [INFO] conftest: START TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_home_available
+2026-03-04 19:34:17 [INFO] src.utils.config_reader: Loaded config: config\demoqa.local.yaml
+2026-03-04 19:34:17 [INFO] src.utils.api_client: API GET https://demoqa.com/
+2026-03-04 19:34:17 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): demoqa.com:443
+2026-03-04 19:34:18 [DEBUG] urllib3.connectionpool: https://demoqa.com:443 "GET / HTTP/1.1" 200 None
+2026-03-04 19:34:18 [INFO] src.utils.api_client: API response 200 https://demoqa.com/
+2026-03-04 19:34:18 [DEBUG] src.utils.api_client: Response body: <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -20,14 +20,14 @@
 </body>
 </html>
 
-2026-03-04 13:44:49 [INFO] conftest: END TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_home_available
-2026-03-04 13:44:49 [INFO] conftest: ================================================================================
-2026-03-04 13:44:49 [INFO] conftest: START TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_form_page_available
-2026-03-04 13:44:49 [INFO] src.utils.api_client: API GET https://demoqa.com/automation-practice-form
-2026-03-04 13:44:49 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): demoqa.com:443
-2026-03-04 13:44:50 [DEBUG] urllib3.connectionpool: https://demoqa.com:443 "GET /automation-practice-form HTTP/1.1" 200 None
-2026-03-04 13:44:50 [INFO] src.utils.api_client: API response 200 https://demoqa.com/automation-practice-form
-2026-03-04 13:44:50 [DEBUG] src.utils.api_client: Response body: <!doctype html>
+2026-03-04 19:34:18 [INFO] conftest: END TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_home_available
+2026-03-04 19:34:18 [INFO] conftest: ================================================================================
+2026-03-04 19:34:18 [INFO] conftest: START TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_form_page_available
+2026-03-04 19:34:18 [INFO] src.utils.api_client: API GET https://demoqa.com/automation-practice-form
+2026-03-04 19:34:18 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): demoqa.com:443
+2026-03-04 19:34:18 [DEBUG] urllib3.connectionpool: https://demoqa.com:443 "GET /automation-practice-form HTTP/1.1" 200 None
+2026-03-04 19:34:18 [INFO] src.utils.api_client: API response 200 https://demoqa.com/automation-practice-form
+2026-03-04 19:34:18 [DEBUG] src.utils.api_client: Response body: <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -42,256 +42,110 @@
 </body>
 </html>
 
-2026-03-04 13:44:50 [INFO] conftest: END TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_form_page_available
-2026-03-04 13:44:50 [INFO] conftest: ================================================================================
-2026-03-04 13:44:50 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_open
-2026-03-04 13:44:50 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
-2026-03-04 13:44:50 [INFO] src.core.browser_factory: Starting Playwright
-2026-03-04 13:44:50 [DEBUG] asyncio: Using selector: EpollSelector
-2026-03-04 13:44:50 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
-2026-03-04 13:44:50 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
-2026-03-04 13:44:50 [DEBUG] src.core.browser_factory: Opening new page
-2026-03-04 13:44:50 [DEBUG] src.core.browser_factory: Browser page ready
-2026-03-04 13:44:50 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+2026-03-04 19:34:18 [INFO] conftest: END TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_form_page_available
+2026-03-04 19:34:18 [INFO] conftest: ================================================================================
+2026-03-04 19:34:18 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_open
+2026-03-04 19:34:18 [INFO] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 19:34:18 [INFO] src.core.browser_factory: Starting Playwright
+2026-03-04 19:34:18 [DEBUG] asyncio: Using proactor: IocpProactor
+2026-03-04 19:34:22 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 19:34:23 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 19:34:23 [DEBUG] src.core.browser_factory: Opening new page
+2026-03-04 19:34:23 [DEBUG] src.core.browser_factory: Browser page ready
+2026-03-04 19:34:23 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-03-04 19:34:28 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:34:29 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
+2026-03-04 19:34:29 [INFO] src.pages.base_page: Is visible div.practice-form-wrapper -> True
+2026-03-04 19:34:29 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:34:29 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_open
+2026-03-04 19:34:29 [INFO] conftest: ================================================================================
+2026-03-04 19:34:29 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_submit_success
+2026-03-04 19:34:29 [INFO] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 19:34:29 [INFO] src.core.browser_factory: Starting Playwright
+2026-03-04 19:34:29 [DEBUG] asyncio: Using proactor: IocpProactor
+2026-03-04 19:34:29 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 19:34:29 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 19:34:29 [DEBUG] src.core.browser_factory: Opening new page
+2026-03-04 19:34:29 [DEBUG] src.core.browser_factory: Browser page ready
+2026-03-04 19:34:29 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-03-04 19:34:33 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:34:34 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
+2026-03-04 19:34:35 [INFO] src.pages.base_page: Fill element: input#firstName with value='Ivan'
+2026-03-04 19:34:36 [INFO] src.pages.base_page: Fill element: input#lastName with value='Petrov'
+2026-03-04 19:34:37 [INFO] src.pages.base_page: Fill element: input#userEmail with value='ivan.petrov@test.com'
+2026-03-04 19:34:37 [INFO] src.pages.base_page: Click hidden input via JS: input#gender-radio-1
+2026-03-04 19:34:38 [INFO] src.pages.base_page: Fill element: input#userNumber with value='9998887776'
+2026-03-04 19:34:39 [INFO] src.pages.base_page: Fill element: input#dateOfBirthInput with value='08 Feb 1996'
+2026-03-04 19:34:40 [INFO] src.pages.base_page: Fill element: input#subjectsInput with value='Maths'
+2026-03-04 19:34:41 [INFO] src.pages.base_page: Press key 'Enter' on element: input#subjectsInput
+2026-03-04 19:34:42 [INFO] src.pages.base_page: Fill element: input#subjectsInput with value='Physics'
+2026-03-04 19:34:42 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
 https://goo.gle/gpt-message#155
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+2026-03-04 19:34:42 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
+2026-03-04 19:34:43 [INFO] src.pages.base_page: Press key 'Enter' on element: input#subjectsInput
+2026-03-04 19:34:43 [INFO] src.pages.base_page: Click hidden input via JS: input#hobbies-checkbox-1
+2026-03-04 19:34:43 [INFO] src.pages.base_page: Click hidden input via JS: input#hobbies-checkbox-3
+2026-03-04 19:34:44 [INFO] src.pages.base_page: Fill element: textarea#currentAddress with value='Moscow, Red Square'
+2026-03-04 19:34:45 [INFO] conftest: [PAGE][console][error] Access to XMLHttpRequest at 'https://id5-sync.com/api/esp/increment?counter=no-config' from origin 'https://demoqa.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+2026-03-04 19:34:45 [WARNING] conftest: [PAGE][requestfailed] https://id5-sync.com/api/esp/increment?counter=no-config - net::ERR_FAILED
+2026-03-04 19:34:45 [INFO] conftest: [PAGE][console][error] Failed to load resource: net::ERR_FAILED
+2026-03-04 19:34:45 [INFO] src.pages.base_page: Click element: #state
+2026-03-04 19:34:47 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
 https://goo.gle/gpt-message#155
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][error] Access to XMLHttpRequest at 'https://id5-sync.com/api/esp/increment?counter=no-config' from origin 'https://demoqa.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-2026-03-04 13:44:52 [WARNING] conftest: [PAGE][requestfailed] https://id5-sync.com/api/esp/increment?counter=no-config - net::ERR_FAILED
-2026-03-04 13:44:52 [INFO] conftest: [PAGE][console][error] Failed to load resource: net::ERR_FAILED
-2026-03-04 13:44:52 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
-2026-03-04 13:44:53 [INFO] src.pages.base_page: Is visible div.practice-form-wrapper -> True
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+2026-03-04 19:34:47 [INFO] src.pages.base_page: Select react option 'Haryana' in #state
+2026-03-04 19:34:47 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
 https://goo.gle/gpt-message#155
-2026-03-04 13:44:53 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_open
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:53 [WARNING] conftest: [PAGE][requestfailed] https://google-bidout-d.openx.net/w/1.0/pd?plm=5 - net::ERR_ABORTED
-2026-03-04 13:44:53 [WARNING] conftest: [PAGE][requestfailed] https://www.google.com/recaptcha/api2/aframe - net::ERR_ABORTED
-2026-03-04 13:44:53 [INFO] conftest: ================================================================================
-2026-03-04 13:44:53 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_submit_success
-2026-03-04 13:44:53 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
-2026-03-04 13:44:53 [INFO] src.core.browser_factory: Starting Playwright
-2026-03-04 13:44:53 [DEBUG] asyncio: Using selector: EpollSelector
-2026-03-04 13:44:53 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
-2026-03-04 13:44:53 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
-2026-03-04 13:44:53 [DEBUG] src.core.browser_factory: Opening new page
-2026-03-04 13:44:53 [DEBUG] src.core.browser_factory: Browser page ready
-2026-03-04 13:44:53 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
-2026-03-04 13:44:55 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:44:55 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
-2026-03-04 13:44:56 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][error] Access to XMLHttpRequest at 'https://id5-sync.com/api/esp/increment?counter=no-config' from origin 'https://demoqa.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-2026-03-04 13:44:56 [WARNING] conftest: [PAGE][requestfailed] https://id5-sync.com/api/esp/increment?counter=no-config - net::ERR_FAILED
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][error] Failed to load resource: net::ERR_FAILED
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:56 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:44:57 [INFO] src.pages.base_page: Fill element: input#firstName with value='Ivan'
-2026-03-04 13:44:58 [INFO] src.pages.base_page: Fill element: input#lastName with value='Petrov'
-2026-03-04 13:44:59 [INFO] src.pages.base_page: Fill element: input#userEmail with value='ivan.petrov@test.com'
-2026-03-04 13:44:59 [INFO] src.pages.base_page: Click hidden input via JS: input#gender-radio-1
-2026-03-04 13:45:00 [INFO] src.pages.base_page: Fill element: input#userNumber with value='9998887776'
-2026-03-04 13:45:01 [INFO] src.pages.base_page: Fill element: input#dateOfBirthInput with value='08 Feb 1996'
-2026-03-04 13:45:02 [INFO] src.pages.base_page: Fill element: input#subjectsInput with value='Maths'
-2026-03-04 13:45:03 [INFO] src.pages.base_page: Press key 'Enter' on element: input#subjectsInput
-2026-03-04 13:45:04 [INFO] src.pages.base_page: Fill element: input#subjectsInput with value='Physics'
-2026-03-04 13:45:05 [INFO] src.pages.base_page: Press key 'Enter' on element: input#subjectsInput
-2026-03-04 13:45:05 [INFO] src.pages.base_page: Click hidden input via JS: input#hobbies-checkbox-1
-2026-03-04 13:45:05 [INFO] src.pages.base_page: Click hidden input via JS: input#hobbies-checkbox-3
-2026-03-04 13:45:06 [INFO] src.pages.base_page: Fill element: textarea#currentAddress with value='Moscow, Red Square'
-2026-03-04 13:45:07 [INFO] src.pages.base_page: Click element: #state
-2026-03-04 13:45:09 [INFO] src.pages.base_page: Select react option 'Haryana' in #state
-2026-03-04 13:45:10 [INFO] src.pages.base_page: Click element: #city
-2026-03-04 13:45:12 [INFO] src.pages.base_page: Select react option 'Karnal' in #city
-2026-03-04 13:45:13 [INFO] src.pages.base_page: Click element: button#submit
-2026-03-04 13:45:13 [INFO] src.pages.base_page: Read text from div#example-modal-sizes-title-lg: Thanks for submitting the form
-2026-03-04 13:45:13 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:14 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_submit_success
-2026-03-04 13:45:14 [INFO] conftest: ================================================================================
-2026-03-04 13:45:14 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_empty_submit
-2026-03-04 13:45:14 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
-2026-03-04 13:45:14 [INFO] src.core.browser_factory: Starting Playwright
-2026-03-04 13:45:14 [DEBUG] asyncio: Using selector: EpollSelector
-2026-03-04 13:45:14 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
-2026-03-04 13:45:14 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
-2026-03-04 13:45:14 [DEBUG] src.core.browser_factory: Opening new page
-2026-03-04 13:45:14 [DEBUG] src.core.browser_factory: Browser page ready
-2026-03-04 13:45:14 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
-2026-03-04 13:45:17 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:18 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
-2026-03-04 13:45:18 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
-2026-03-04 13:45:18 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:18 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:18 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:18 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:18 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][error] Access to XMLHttpRequest at 'https://id5-sync.com/api/esp/increment?counter=no-config' from origin 'https://demoqa.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-2026-03-04 13:45:19 [WARNING] conftest: [PAGE][requestfailed] https://id5-sync.com/api/esp/increment?counter=no-config - net::ERR_FAILED
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][error] Failed to load resource: net::ERR_FAILED
-2026-03-04 13:45:19 [INFO] src.pages.base_page: Click element: button#submit
-2026-03-04 13:45:19 [INFO] src.pages.base_page: Is visible div#example-modal-sizes-title-lg -> False
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:19 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:19 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_empty_submit
-2026-03-04 13:45:19 [WARNING] conftest: [PAGE][requestfailed] https://google-bidout-d.openx.net/w/1.0/pd?plm=5 - net::ERR_ABORTED
-2026-03-04 13:45:20 [INFO] conftest: ================================================================================
-2026-03-04 13:45:20 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_invalid_email
-2026-03-04 13:45:20 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
-2026-03-04 13:45:20 [INFO] src.core.browser_factory: Starting Playwright
-2026-03-04 13:45:20 [DEBUG] asyncio: Using selector: EpollSelector
-2026-03-04 13:45:20 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
-2026-03-04 13:45:20 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
-2026-03-04 13:45:20 [DEBUG] src.core.browser_factory: Opening new page
-2026-03-04 13:45:20 [DEBUG] src.core.browser_factory: Browser page ready
-2026-03-04 13:45:20 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
-2026-03-04 13:45:22 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:23 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
-2026-03-04 13:45:23 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:23 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:23 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:23 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:23 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][error] Access to XMLHttpRequest at 'https://id5-sync.com/api/esp/increment?counter=no-config' from origin 'https://demoqa.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-2026-03-04 13:45:24 [WARNING] conftest: [PAGE][requestfailed] https://id5-sync.com/api/esp/increment?counter=no-config - net::ERR_FAILED
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][error] Failed to load resource: net::ERR_FAILED
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] src.pages.base_page: Fill element: input#firstName with value='Ivan'
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:24 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:25 [INFO] src.pages.base_page: Fill element: input#lastName with value='Petrov'
-2026-03-04 13:45:26 [INFO] src.pages.base_page: Fill element: input#userEmail with value='invalid-email'
-2026-03-04 13:45:26 [INFO] src.pages.base_page: Click hidden input via JS: input#gender-radio-1
-2026-03-04 13:45:27 [INFO] src.pages.base_page: Fill element: input#userNumber with value='9998887776'
-2026-03-04 13:45:28 [INFO] src.pages.base_page: Fill element: textarea#currentAddress with value='Test address'
-2026-03-04 13:45:29 [INFO] src.pages.base_page: Click element: button#submit
-2026-03-04 13:45:29 [INFO] src.pages.base_page: Is visible div#example-modal-sizes-title-lg -> False
-2026-03-04 13:45:29 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:30 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_invalid_email
-2026-03-04 13:45:30 [INFO] conftest: ================================================================================
-2026-03-04 13:45:30 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_state_city_dependency
-2026-03-04 13:45:30 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
-2026-03-04 13:45:30 [INFO] src.core.browser_factory: Starting Playwright
-2026-03-04 13:45:30 [DEBUG] asyncio: Using selector: EpollSelector
-2026-03-04 13:45:30 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
-2026-03-04 13:45:30 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
-2026-03-04 13:45:30 [DEBUG] src.core.browser_factory: Opening new page
-2026-03-04 13:45:30 [DEBUG] src.core.browser_factory: Browser page ready
-2026-03-04 13:45:30 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
-2026-03-04 13:45:34 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:35 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
-2026-03-04 13:45:36 [INFO] src.pages.base_page: Click element: #state
-2026-03-04 13:45:36 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:36 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:36 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:37 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:37 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
-https://goo.gle/gpt-message#155
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][error] Access to XMLHttpRequest at 'https://id5-sync.com/api/esp/increment?counter=no-config' from origin 'https://demoqa.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
-2026-03-04 13:45:38 [WARNING] conftest: [PAGE][requestfailed] https://id5-sync.com/api/esp/increment?counter=no-config - net::ERR_FAILED
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][error] Failed to load resource: net::ERR_FAILED
-2026-03-04 13:45:38 [INFO] src.pages.base_page: Select react option 'Haryana' in #state
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:38 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:39 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:39 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:39 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:39 [INFO] src.pages.base_page: Click element: #city
-2026-03-04 13:45:39 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:40 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:41 [INFO] src.pages.base_page: Select react option 'Karnal' in #city
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:42 [INFO] conftest: [PAGE][console][log] automation-practice-form
-2026-03-04 13:45:42 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_state_city_dependency
+2026-03-04 19:34:48 [INFO] src.pages.base_page: Click element: #city
+2026-03-04 19:34:49 [INFO] conftest: [PAGE][console][warning] [GroupMarkerNotSet(crbug.com/242999)!:A8A0190024370000]Automatic fallback to software WebGL has been deprecated. Please use the --enable-unsafe-swiftshader (about:flags#enable-unsafe-swiftshader) flag to opt in to lower security guarantees for trusted content.
+2026-03-04 19:34:50 [INFO] src.pages.base_page: Select react option 'Karnal' in #city
+2026-03-04 19:34:51 [INFO] src.pages.base_page: Click element: button#submit
+2026-03-04 19:34:52 [INFO] src.pages.base_page: Read text from div#example-modal-sizes-title-lg: Thanks for submitting the form
+2026-03-04 19:34:52 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:34:52 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_submit_success
+2026-03-04 19:34:52 [INFO] conftest: ================================================================================
+2026-03-04 19:34:52 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_empty_submit
+2026-03-04 19:34:52 [INFO] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 19:34:52 [INFO] src.core.browser_factory: Starting Playwright
+2026-03-04 19:34:52 [DEBUG] asyncio: Using proactor: IocpProactor
+2026-03-04 19:34:52 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 19:34:52 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 19:34:52 [DEBUG] src.core.browser_factory: Opening new page
+2026-03-04 19:34:52 [DEBUG] src.core.browser_factory: Browser page ready
+2026-03-04 19:34:52 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-03-04 19:35:00 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:35:01 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
+2026-03-04 19:35:02 [INFO] src.pages.base_page: Click element: button#submit
+2026-03-04 19:35:02 [INFO] src.pages.base_page: Is visible div#example-modal-sizes-title-lg -> False
+2026-03-04 19:35:02 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:35:02 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_empty_submit
+2026-03-04 19:35:03 [INFO] conftest: ================================================================================
+2026-03-04 19:35:03 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_invalid_email
+2026-03-04 19:35:03 [INFO] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 19:35:03 [INFO] src.core.browser_factory: Starting Playwright
+2026-03-04 19:35:03 [DEBUG] asyncio: Using proactor: IocpProactor
+2026-03-04 19:35:03 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 19:35:03 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 19:35:03 [DEBUG] src.core.browser_factory: Opening new page
+2026-03-04 19:35:03 [DEBUG] src.core.browser_factory: Browser page ready
+2026-03-04 19:35:03 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-03-04 19:35:14 [ERROR] conftest: Test failed: test_demoqa_form_invalid_email
+2026-03-04 19:35:24 [WARNING] src.utils.allure_helper: Failed to attach screenshot: Page.screenshot: Timeout 10000ms exceeded.
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+
+2026-03-04 19:35:24 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_invalid_email
+2026-03-04 19:35:24 [INFO] conftest: ================================================================================
+2026-03-04 19:35:24 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_state_city_dependency
+2026-03-04 19:35:24 [INFO] src.utils.config_reader: Loaded config: config\demoapp.local.yaml
+2026-03-04 19:35:24 [INFO] src.core.browser_factory: Starting Playwright
+2026-03-04 19:35:24 [DEBUG] asyncio: Using proactor: IocpProactor
+2026-03-04 19:35:25 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-03-04 19:35:25 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-03-04 19:35:25 [DEBUG] src.core.browser_factory: Opening new page
+2026-03-04 19:35:25 [DEBUG] src.core.browser_factory: Browser page ready
+2026-03-04 19:35:25 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-03-04 19:35:36 [ERROR] conftest: Test failed: test_demoqa_state_city_dependency
+2026-03-04 19:35:37 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:35:37 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-03-04 19:35:37 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_state_city_dependency
