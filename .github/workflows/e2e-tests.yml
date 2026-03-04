@@ -25,21 +25,9 @@ jobs:
         run: |
           docker compose run --rm e2e-demoqa
 
-      - name: Show reports dir (debug)
-        run: |
-          echo "Reports content:"
-          ls -la e2e-framework/reports || true
-          echo "Allure results:"
-          ls -la e2e-framework/reports/allure-results || true
-
       - name: Generate Allure report (docker image tobix/allure-cli)
         run: |
           docker run --rm -v ${{ github.workspace }}/e2e-framework/reports:/app/reports -w /app/reports tobix/allure-cli generate ./allure-results --clean -o ./allure-report
-
-      - name: Show generated report dir (debug)
-        run: |
-          echo "Report output:"
-          ls -la e2e-framework/reports/allure-report || true
 
       - name: Upload Allure report
         if: always()
@@ -52,7 +40,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.CI_TOKEN }}
           publish_dir: e2e-framework/reports/allure-report
           force_orphan: true
 
