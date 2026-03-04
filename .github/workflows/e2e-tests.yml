@@ -1,4 +1,4 @@
-name: E2E Tests (Docker + Playwright + Allure)
+name: E2E Tests 
 
 on:
   push:
@@ -27,12 +27,12 @@ jobs:
       # ===== RUN DEMOAPP TESTS =====
       - name: Run E2E tests for demo-app
         run: |
-          docker compose run --rm e2e-demoapp
+          docker compose up --abort-on-container-exit --exit-code-from e2e-demoapp e2e-demoapp
 
       # ===== RUN DEMOQA TESTS =====
       - name: Run E2E tests for demoqa
         run: |
-          docker compose run --rm e2e-demoqa
+          docker compose up --abort-on-container-exit --exit-code-from e2e-demoqa e2e-demoqa
 
       # ===== UPLOAD ALLURE RESULTS =====
       - name: Upload Allure results
