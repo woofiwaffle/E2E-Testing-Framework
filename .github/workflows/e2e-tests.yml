@@ -22,7 +22,7 @@ jobs:
       # ===== BUILD IMAGES =====
       - name: Build Docker images
         run: |
-          docker compose build e2e-tests-demoqa
+          docker compose build e2e-demoqa
 
       # ===== RUN DEMOQA TESTS =====
       - name: Run E2E tests for demoqa
