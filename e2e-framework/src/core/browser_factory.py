@@ -1,47 +1,58 @@
+import os
+import logging
 from playwright.sync_api import sync_playwright, Browser, Page, Playwright, BrowserContext
 from typing import Tuple, Optional
 from src.utils.config_reader import get_config
-from src.utils.logger import get_logger
-import os
-import uuid
 
-log = get_logger("BrowserFactory")
+log = logging.getLogger(__name__)
 
 def open_page(test_name: Optional[str] = None) -> Tuple[Playwright, Browser, BrowserContext, Page, dict]:
-    """
-    Возвращает (playwright, browser, context, page, meta).
-    Не пытается ставить атрибуты на context — трассировку и запись видео
-    нужно включать через методы context.tracing.start и context.tracing.stop в фикстурах.
-    """
+    
+    # ===== LOADING CONFIGURATION =====
     cfg = get_config()
+    log.info("Starting Playwright")
     pw = sync_playwright().start()
-    browser_name = cfg.get("browser", "chromium")
-    headless = cfg.get("headless", True)
-    record_video = cfg.get("record_video", False)
-    trace_on = cfg.get("trace", False)
+    
 
+    # ===== BROWSER SETTINGS =====
+    browser_name = cfg["browser"]
+    headless = cfg["headless"]
+    slow_mo = cfg["slow_mo"]
+    
     launch_args = {"headless": headless}
-    log.info(f"Launching {browser_name} headless={headless} video={record_video} trace={trace_on}")
+    if slow_mo > 0:
+        launch_args["slow_mo"] = slow_mo
+    if "launch_args" in cfg:
+        launch_args.update(cfg["launch_args"])
+    
 
+    # ===== LAUNCHING THE BROWSER =====
+    log.debug("Launching browser: %s (headless=%s)", browser_name, headless)
     browser = getattr(pw, browser_name).launch(**launch_args)
+    
 
-    # Context options (video dir if enabled)
-    context_args = {}
-    artifacts = {}
-    run_id = test_name or str(uuid.uuid4())
-    reports_dir = os.environ.get("REPORTS_DIR", "reports")
-    test_dir = f"{reports_dir}/{run_id}"
-    os.makedirs(test_dir, exist_ok=True)
-    artifacts["test_dir"] = test_dir
-
-    if record_video:
-        video_dir = os.path.join(test_dir, "video")
-        os.makedirs(video_dir, exist_ok=True)
-        context_args["record_video_dir"] = video_dir
-        artifacts["video_dir"] = video_dir
-
+    # ===== CONTEXT SETTING =====
+    viewport = cfg["viewport"]
+    context_args = {"viewport": viewport}
+    log.debug("Creating browser context with viewport=%s", viewport)
     context = browser.new_context(**context_args)
-    page = context.new_page()
-    page.set_default_timeout(cfg.get("timeouts", {}).get("default", 5000))
+    
 
+    # ===== CREATING A PAGE =====
+    log.debug("Opening new page")
+    page = context.new_page()
+
+
+    # ===== SETTING TIMEOUT =====
+    timeout = cfg["timeouts"]["default"]
+    page.set_default_timeout(timeout)
+    log.debug("Browser page ready")
+    
+
+    # ===== CREATION OF ARTIFACTS =====
+    artifacts = {
+        "test_dir": os.path.join(os.environ.get("REPORTS_DIR", "reports"), test_name or "default")
+    }
+    os.makedirs(artifacts["test_dir"], exist_ok=True)
+    
     return pw, browser, context, page, artifacts

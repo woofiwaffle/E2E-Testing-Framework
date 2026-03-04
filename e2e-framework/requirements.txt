@@ -1,5 +1,5 @@
+playwright==1.42.0
 pytest
-pytest-playwright
 allure-pytest
 pyyaml
 requests

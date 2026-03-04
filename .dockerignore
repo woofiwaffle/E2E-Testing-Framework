@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.cursor
+.idea
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+**/.venv
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+
+# Node
+**/node_modules
+
+# Test artifacts
+**/reports
+**/logs
+
+# Docker
+**/.dockerignore

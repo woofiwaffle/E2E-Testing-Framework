@@ -1,77 +1,72 @@
 import pytest
-import os
 import time
 import requests
+import logging
 from src.core.browser_factory import open_page
+from src.utils.allure_helper import *
 from src.utils.config_reader import get_config
-from src.pages.example_page import ExamplePage
-from src.utils.artifacts_helper import save_screenshot, save_page_source, list_videos
-from src.utils.allure_helper import attach_screenshot, attach_page_source
+from src.utils.api_client import APIClient
+from src.pages.demoapp_page import DemoAppPage
+from src.pages.demoqa_page import DemoQAFormPage
+
+log = logging.getLogger(__name__)
+
 
 @pytest.fixture(scope="session")
-def config():
-    return get_config()
+def config(request):
+    config_name = request.config.getoption("--config")
+    return get_config(config_name)
 
+def pytest_addoption(parser):
+    parser.addoption(
+        "--config",
+        action="store",
+        default=None,
+        help="Config file name from config/ directory"
+    )
+
+# ===== ENVIRONMENTAL FIXTURES =====
 @pytest.fixture(scope="function")
 def wait_for_service(config):
-    base = config.get("base_url").rstrip("/")
+    base = config["base_url"].rstrip("/")
     health_url = f"{base}/healthz"
-    timeout = config.get("service_wait_seconds", 30)
+    timeout = config["timeouts"]["service_wait"]
     interval = 0.5
     end = time.time() + timeout
     last_exc = None
+    
     while time.time() < end:
         try:
-            r = requests.get(health_url, timeout=2)
+            request_timeout = config["timeouts"]["healthcheck"]
+            r = requests.get(health_url, timeout=request_timeout)
             if r.status_code == 200:
                 return True
         except Exception as e:
             last_exc = e
         time.sleep(interval)
+    
     raise RuntimeError(f"Service {health_url} did not become ready within {timeout}s. Last error: {last_exc}")
 
+
+# ===== BROWSER FIXTURES =====
 @pytest.fixture(scope="function")
-def browser_ctx(request, config, wait_for_service):
+def browser_ctx(request):
     test_name = request.node.name
     pw, browser, context, page, artifacts = open_page(test_name=test_name)
-
-    # DEBUG: печатаем console.log() из страницы в логи контейнера
     try:
-        page.on("console", lambda msg: print(f"[PAGE][console][{msg.type}] {msg.text}"))
+        page.on("console", lambda msg: log.info(f"[PAGE][console][{msg.type}] {msg.text}"))
     except Exception:
         pass
 
-    # DEBUG: печатаем упавшие запросы
     try:
         def on_request_failed(req):
-            print(f"[PAGE][requestfailed] {req.url} - {req.failure}")
+            log.warning(f"[PAGE][requestfailed] {req.url} - {req.failure}")
         page.on("requestfailed", on_request_failed)
     except Exception:
         pass
 
-    # start tracing if requested
-    if config.get("trace", False):
-        context.tracing.start(screenshots=True, snapshots=True, sources=True)
-
     yield page, artifacts
 
-    # teardown: stop tracing if started
-    if config.get("trace", False):
-        trace_path = os.path.join(artifacts["test_dir"], "trace.zip")
-        try:
-            context.tracing.stop(path=trace_path)
-        except Exception as e:
-            print("Failed to stop tracing:", e)
-
-    # optionally list videos
-    if config.get("record_video", False):
-        video_dir = artifacts.get("video_dir")
-        if video_dir:
-            videos = list_videos(video_dir)
-            if videos:
-                print(f"Saved videos for {test_name}: {videos}")
-
-    # close
     try:
         context.close()
     except Exception:
@@ -85,23 +80,85 @@ def browser_ctx(request, config, wait_for_service):
     except Exception:
         pass
 
-@pytest.fixture(scope="function")
-def example_page(browser_ctx, config):
-    page, meta = browser_ctx
-    return ExamplePage(page, config.get("base_url"))
 
+# ===== PAGE FIXTURES =====
+@pytest.fixture(scope="function")
+def demoapp_page(browser_ctx, config):
+    page, meta = browser_ctx
+    return DemoAppPage(page, config["base_url"])
+
+@pytest.fixture(scope="function")
+def demoqa_form_page(browser_ctx, config):
+    page, meta = browser_ctx
+    return DemoQAFormPage(page, config["base_url"])
+
+
+# ===== API CLIENT =====
+@pytest.fixture(scope="function")
+def api_client(config):
+    return APIClient(
+        base_url=config["base_url"],
+        default_headers={
+            "Content-Type": "application/json"
+        }
+    )
+
+
+# ===== ALLURE INTEGRATION =====
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
-    rep = outcome.get_result()
-    if rep.when == "call" and rep.failed:
-        page_fixt = item.funcargs.get("browser_ctx")
-        if page_fixt:
-            page, artifacts = page_fixt
+    report = outcome.get_result()
+
+    if report.when != "call":
+        return
+
+    page = None
+    artifacts = None
+
+    for fixture_name in ("browser_ctx",):
+        if fixture_name in item.fixturenames:
+            page, artifacts = item.funcargs.get(fixture_name, (None, None))
+    
+    if report.failed:
+        log.error(f"Test failed: {item.name}")
+        if page:
             try:
-                save_screenshot(page, artifacts["test_dir"], name=f"{item.name}_failure")
-                save_page_source(page, artifacts["test_dir"], name=f"{item.name}_source")
-                attach_screenshot(page, name=f"{item.name}_allure_failure")
-                attach_page_source(page, name=f"{item.name}_allure_source")
+                AllureHelper.attach_screenshot(page, "Failure screenshot")
             except Exception as e:
-                print("Failed to save artifacts:", e)
+                log.warning("Failed to attach failure screenshot: %s", e)
+        
+        allure.attach(
+            str(report.longrepr), 
+            name="Failure details", 
+            attachment_type=allure.attachment_type.TEXT
+        )
+    elif page:
+        AllureHelper.attach_screenshot(page, "End of test screenshot")
+
+
+# ===== TEST LIFECYCLE HOOKS =====
+def pytest_runtest_setup(item):
+
+    # === Allure markers ===
+    for marker in item.iter_markers():
+        name = marker.name
+
+        if name in ("smoke", "api", "ui", "regression"):
+            allure.dynamic.tag(name)
+
+        if name.startswith("priority_"):
+            priority_val = name.replace("priority_", "").upper()
+            allure.dynamic.label("priority", priority_val)
+
+        if name.startswith("severity_"):
+            sev = name.replace("severity_", "").upper()
+            allure.dynamic.severity(sev.lower())
+    
+    # === Logging ===
+    log.info("=" * 80)
+    log.info("START TEST: %s", item.nodeid)
+
+
+def pytest_runtest_teardown(item):
+    log.info("END TEST: %s", item.nodeid)

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Demo Home Page</h1>
+
+    <div class="form-group">
+      <label for="demo-input">Demo input:</label>
+      <input id="demo-input" type="text" placeholder="Type something" />
+    </div>
+
+    <div class="button-group">
+      <button id="demo-button">Send to server</button>
+      <button id="open-modal">Open Modal</button>
+      <button id="show-toast">Show Toast</button>
+    </div>
+
+    <div id="result" aria-live="polite" role="status">Result will appear here</div>
+    <div id="loading-indicator" style="display: none;">Loading...</div>
+
+    <div class="form-container">
+      <h2>Simple Form</h2>
+      <form id="simple-form">
+        <div class="form-group">
+          <label for="simple-input">Input:</label>
+          <input id="simple-input" type="text" placeholder="Enter text" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="list-container">
+      <h2>Simple List</h2>
+      <div class="list-controls">
+        <input type="text" id="new-item-input" placeholder="Enter new item" />
+        <button id="add-item-btn">Add Item</button>
+      </div>
+      <ul id="simple-list">
+      </ul>
+    </div>
+
+    <div id="edit-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title">
+      <div class="modal-content">
+        <h3 id="edit-modal-title">Edit item</h3>
+        <label for="edit-input" class="visually-hidden">New name</label>
+        <input id="edit-input" type="text" />
+        <div class="modal-actions">
+          <button id="edit-save" class="btn primary">Save</button>
+          <button id="edit-cancel" class="btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  <div id="demo-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>This is a modal dialog.</p>
+    </div>
+  </div>
+
+  <div id="demo-toast" class="toast">Toast notification!</div>
+
+  <button id="theme-toggle" data-testid="theme-toggle"> Toggle theme </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

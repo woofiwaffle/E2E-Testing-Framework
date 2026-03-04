@@ -1,0 +1,15 @@
+base_url: "http://demo-app:3000/"
+browser: "chromium"
+headless: True
+viewport:
+  width: 1280
+  height: 1600
+launch_args:
+  args: ["--force-device-scale-factor=1.2"]
+timeouts:
+  default: 10000          # Timeout for operations
+  page_load: 30000        # Timeout for page loading
+  element_appear: 5000    # Timeout for elements to appear
+  service_wait: 30        # Timeout for waiting for service
+  healthcheck: 5          # Timeout for healthcheck requests
+slow_mo: 0 

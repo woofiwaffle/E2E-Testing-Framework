@@ -1,0 +1,49 @@
+name: E2E Tests (Docker + Playwright + Allure)
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ===== CHECKOUT =====
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ===== DOCKER SETUP =====
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      # ===== BUILD IMAGES =====
+      - name: Build Docker images
+        run: |
+          docker compose build
+
+      # ===== RUN DEMOAPP TESTS =====
+      - name: Run E2E tests for demo-app
+        run: |
+          docker compose run --rm e2e-demoapp
+
+      # ===== RUN DEMOQA TESTS =====
+      - name: Run E2E tests for demoqa
+        run: |
+          docker compose run --rm e2e-demoqa
+
+      # ===== UPLOAD ALLURE RESULTS =====
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: e2e-framework/reports/allure-results
+
+      # ===== CLEANUP =====
+      - name: Docker cleanup
+        if: always()
+        run: |
+          docker compose down -v
