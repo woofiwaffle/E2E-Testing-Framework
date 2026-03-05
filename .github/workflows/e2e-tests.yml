@@ -51,7 +51,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.CI-TOKEN }}
           publish_dir: e2e-framework/reports/allure-report
 
       - name: Docker cleanup
