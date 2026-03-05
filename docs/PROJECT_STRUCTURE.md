@@ -8,7 +8,7 @@
 - `.dockerignore`
 - `.gitignore` 
 - `docker-compose.yml`
-- `README.md` — General information about the project and launch
+- `README.md` — Brief information about the project and launch
 
 ### Demo Application
 
@@ -27,7 +27,7 @@
 - `docs/` — project documentation
   - `Annotation_Old.pdf`
   - `PROJECT_PLAN.md` 
-  - `README.md` 
+  - `README.md` - Main information about the project
 
 ### End‑to‑End Testing Framework
 
