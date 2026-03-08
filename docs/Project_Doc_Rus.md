@@ -81,6 +81,7 @@ D --> F[API Tests]
 
 E --> G[Allure Reports]
 F --> G
+```
 
 ---
 
