@@ -70,27 +70,51 @@ docker-compose.yml
 Диаграмма Архитектуры: 
 
 ```mermaid
-flowchart TD
+graph LR
+  %% Определяем группы (контейнеры) для наглядности
+  subgraph Докеризированная среда
+    subgraph "Контейнер Demo-App"
+      DemoUI[Frontend (Demo App)]
+      DemoAPI[Backend API (Demo App)]
+    end
+    subgraph "Контейнер E2E-тестов"
+      subgraph "E2E-фреймворк"
+        Config[(YAML конфигурации)]
+        BrowserFactory[/BrowserFactory/]
+        Locators[Locators]
+        PageObjects[Page Objects (POM)]
+        UIComponents[UI-компоненты]
+        UITests[Testы UI]
+        APITests[Testы API]
+        Reporting[Allure (отчетность)]
+        Logging[Логи и скриншоты]
+      end
+    end
+  end
 
-A[Developer / CI Pipeline] --> B[GitHub Actions]
+  %% Основные связи
+  BrowserFactory -->|инициализирует браузер| UITests
+  PageObjects -->|используются в| UITests
+  Locators -->|используются в| PageObjects
+  UIComponents -->|переиспользуются в| PageObjects
+  Config -->|определяет окружение| UITests
+  Config -->|определяет окружение| APITests
+  UITests -->|тестируют UI Demo-App| DemoUI
+  APITests -->|тестируют API Demo-App| DemoAPI
+  UITests --> Logging
+  APITests --> Logging
+  Reporting -->|генерирует отчеты| Logging
+  
+  %% CI/CD интеграция
+  subgraph "CI/CD (GitHub Actions)"
+    GHActions[GitHub Actions пайплайн]
+  end
+  GHActions -->|стартует сборку и тесты| Docker_COM
+  GHActions -.-> Reporting
 
-B --> C[Docker Compose Environment]
-
-C --> D[E2E Testing Framework]
-
-D --> E[Test Layer<br>Web Application Under Test]
-
-E --> F[Page Object Layer]
-F --> G[Core Layer<br>BrowserFactory]
-G --> H[Browser<br>Chromium / Chrome]
-
-H --> I[UI Tests<br>Playwright]
-E --> J[API Tests<br>Pytest + Requests]
-
-I --> L[Test Artifacts<br>Logs / Screenshots]
-J --> L
-
-L --> M[Allure Reports]
+  %% Связь CI/CD c контейнерами
+  Docker_COM[[Docker Compose]] --> "Контейнер Demo-App"
+  Docker_COM --> "Контейнер E2E-тестов"
 ```
 
 ---

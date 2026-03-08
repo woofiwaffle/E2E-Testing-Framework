@@ -67,6 +67,9 @@ docs/
 docker-compose.yml
 ```
 
+Architecture Diagram:
+
+
 ---
 
 ## Demo application
