@@ -88,7 +88,7 @@ H --> I[UI Tests<br>Playwright]
 E --> J[API Tests<br>Pytest + Requests]
 
 I --> K[Web Application Under Test]
-E --> K
+J --> K
 
 I --> L[Test Artifacts<br>Logs / Screenshots]
 J --> L
