@@ -28,20 +28,31 @@
 docker compose -f docker-compose.yml build
 ```
 
-### Запуск среды
+### Запуск среды для DemoApp
 
 ```bash
-docker compose -f docker-compose.yml up
+docker compose up -d demo-app
+
+docker compose up e2e-demoapp
 ```
 
 Эта команда запускает:
 
 - демонстрационное приложение
-- контейнер для запуска сквозных тестов
+- контейнер для запуска сквозных тестов для DemoApp
+
+### Запуск среды для DemoQA
+
+```bash
+docker compose up e2e-demoqa
+```
+
+Эта команда запускает:
+- контейнер для запуска скзвонхы тестов для внешнего веб-приложения DemoQA
 
 ---
 
-## Запуск тестов вручную
+## Запуск тестов вручную (Примеры)
 
 Активация виртуальной среды (Windows PowerShell):
 
@@ -49,16 +60,15 @@ docker compose -f docker-compose.yml up
 . .\.venv\Scripts\Activate.ps1
 ```
 
-Запуск всех тестов:
+Запуск только тестов API для DemoApp:
 
 ```bash
-pytest
+pytest -k api -s -m app_demoapp --config=demoapp.local.yaml
 ```
 
-Запуск только тестов API:
-
+Запуск только тестов UI для DemoApp:
 ```bash
-pytest -k api -s
+pytest -k ui -s -m app_demoapp --config=demoapp.local.yaml
 ```
 
 Запуск тестов DemoApp:
@@ -102,12 +112,6 @@ docker compose down -v --remove-orphans
 
 ```bash
 docker compose build --no-cache
-```
-
-Запуск сервисов:
-
-```bash
-docker compose up
 ```
 
 Запуск конкретных сервисов:
@@ -162,16 +166,28 @@ The framework is designed to be **universal**, meaning it can be adapted to test
 docker compose -f docker-compose.yml build
 ```
 
-### Start the environment
+### Start the environment for DemoApp
 
 ```bash
-docker compose -f docker-compose.yml up
+docker compose up -d demo-app
+
+docker compose up e2e-demoapp
 ```
 
 This command starts:
 
 - demo application
-- E2E test runner container
+- the container running end-to-end tests for DemoApp
+
+### Start the environment for DemoQA
+
+```bash
+docker compose up e2e-demoqa
+```
+
+This command starts:
+
+- the container running end-to-end tests for the external web application DemoQA
 
 ---
 
@@ -183,16 +199,15 @@ Activate virtual environment (Windows PowerShell):
 . .\.venv\Scripts\Activate.ps1
 ```
 
-Run all tests:
+Run only API tests for DemoApp:
 
 ```bash
-pytest
+pytest -k api -s -m app_demoapp --config=demoapp.local.yaml
 ```
 
-Run only API tests:
-
+Run only UI tests for DemoApp:
 ```bash
-pytest -k api -s
+pytest -k ui -s -m app_demoapp --config=demoapp.local.yaml
 ```
 
 Run DemoApp tests:
@@ -236,20 +251,6 @@ Rebuild images without cache:
 
 ```bash
 docker compose build --no-cache
-```
-
-Start services:
-
-```bash
-docker compose up
-```
-
-Run specific services:
-
-```bash
-docker compose up -d demo-app
-docker compose up e2e-demoapp
-docker compose up e2e-demoqa
 ```
 
 ---
