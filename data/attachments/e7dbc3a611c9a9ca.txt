@@ -1,0 +1,21 @@
+2026-03-08 15:16:43 [INFO] conftest: ================================================================================
+2026-03-08 15:16:43 [INFO] conftest: START TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_form_page_available
+2026-03-08 15:16:43 [INFO] src.utils.api_client: API GET https://demoqa.com/automation-practice-form
+2026-03-08 15:16:43 [DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): demoqa.com:443
+2026-03-08 15:16:43 [DEBUG] urllib3.connectionpool: https://demoqa.com:443 "GET /automation-practice-form HTTP/1.1" 200 None
+2026-03-08 15:16:43 [INFO] src.utils.api_client: API response 200 https://demoqa.com/automation-practice-form
+2026-03-08 15:16:43 [DEBUG] src.utils.api_client: Response body: <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>demosite</title>
+  <script type="module" crossorigin src="/assets/index-D_rDx8ml.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-pe2EUVKA.css">
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
+2026-03-08 15:16:43 [INFO] conftest: END TEST: src/tests/demoqa/test_api/test_demoqa_api.py::test_demoqa_form_page_available
