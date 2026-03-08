@@ -81,11 +81,11 @@ graph LR
         Config[(YAML конфигурации)]
         BrowserFactory[/BrowserFactory/]
         Locators[Locators]
-        PageObjects[Page Objects (POM)]
+        PageObjects[Page Objects]
         UIComponents[UI-компоненты]
         UITests[Testы UI]
         APITests[Testы API]
-        Reporting[Allure (отчетность)]
+        Reporting[Allure]
         Logging[Логи и скриншоты]
       end
     end
