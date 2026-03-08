@@ -71,11 +71,10 @@ docker-compose.yml
 
 ```mermaid
 graph LR
-  %% Определяем группы (контейнеры) для наглядности
   subgraph Докеризированная среда
     subgraph "Контейнер Demo-App"
-      DemoUI[Frontend (Demo App)]
-      DemoAPI[Backend API (Demo App)]
+      DemoUI[Frontend]
+      DemoAPI[Backend API]
     end
     subgraph "Контейнер E2E-тестов"
       subgraph "E2E-фреймворк"
@@ -92,7 +91,6 @@ graph LR
     end
   end
 
-  %% Основные связи
   BrowserFactory -->|инициализирует браузер| UITests
   PageObjects -->|используются в| UITests
   Locators -->|используются в| PageObjects
@@ -104,15 +102,13 @@ graph LR
   UITests --> Logging
   APITests --> Logging
   Reporting -->|генерирует отчеты| Logging
-  
-  %% CI/CD интеграция
+
   subgraph "CI/CD (GitHub Actions)"
     GHActions[GitHub Actions пайплайн]
   end
   GHActions -->|стартует сборку и тесты| Docker_COM
   GHActions -.-> Reporting
 
-  %% Связь CI/CD c контейнерами
   Docker_COM[[Docker Compose]] --> "Контейнер Demo-App"
   Docker_COM --> "Контейнер E2E-тестов"
 ```
