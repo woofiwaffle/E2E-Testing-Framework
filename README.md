@@ -114,14 +114,6 @@ docker compose down -v --remove-orphans
 docker compose build --no-cache
 ```
 
-Запуск конкретных сервисов:
-
-```bash
-docker compose up -d demo-app
-docker compose up e2e-demoapp
-docker compose up e2e-demoqa
-```
-
 ---
 
 ## Примечания
@@ -191,7 +183,7 @@ This command starts:
 
 ---
 
-## Running Tests Manually
+## Running Tests Manually (Examples)
 
 Activate virtual environment (Windows PowerShell):
 
