@@ -1,106 +1,188 @@
-## Описание
+# E2E Testing Framework — Project Documentation
 
-Фреймворк для сквозного (E2E) тестирования веб-приложений. Основные возможности:
+## Introduction
 
-- **Page Object Model**: Удобное управление страницами и компонентами.
-- **Компонентный подход**: Готовые компоненты (кнопки, инпуты, таблицы).
-- **Логирование**: Структурированное логирование для анализа.
-- **Allure интеграция**: Генерация отчетов для визуализации результатов.
-- **Docker инфраструктура**: Готовая среда для запуска тестов (опционально).
+This project implements an automated testing framework for web applications.
 
-## Установка
+The main goal of the project is to design a reusable framework that supports:
 
-### Локальный запуск (без Docker)
+- automated UI testing
+- automated API testing
+- containerized execution
+- CI/CD integration
+- test reporting
 
-1. Установите зависимости:
-   ```bash
-   pip install -r requirements.txt
-   ```
+The framework is implemented using Python and modern test automation tools.
 
-2. Запустите тесты:
-   ```bash
-   pytest
-   ```
+---
 
-3. Генерация Allure отчетов:
-   ```bash
-   pytest --alluredir=reports
-   allure serve reports
-   ```
+# Technology Stack
 
-### Запуск с Docker (опционально)
+- Python 3
+- Pytest
+- Playwright
+- Docker / Docker Compose
+- Allure Reports
+- GitHub Actions (CI/CD)
 
-1. Соберите и запустите контейнеры:
-   ```bash
-   docker compose -f docker-compose.yml build
-   docker compose -f docker-compose.yml up
-   ```
+Additional libraries:
 
-## Структура проекта
+- requests
+- pyyaml
+- faker
 
-- `config/`: Конфигурации для разных окружений (`dev.yaml`, `prod.yaml`).
-- `src/`: Исходный код фреймворка.
-  - `components/`: Компоненты (Button, Input, Table).
-  - `pages/`: Страницы (BasePage, ExamplePage).
-  - `utils/`: Утилиты (API клиент, Allure хелперы, логирование).
-- `tests/`: Тесты.
-- `reports/`: Отчеты Allure.
+---
 
-## Примеры использования
+# Architecture
 
-### Добавление нового теста
+The system contains three main components:
 
-1. Создайте новую страницу в `src/pages/`.
-2. Напишите тест в `src/tests/`.
-3. Запустите тест:
-   ```bash
-   pytest src/tests/test_example.py
-   ```
+1. **Demo Application**
+2. **E2E Testing Framework**
+3. **Documentation and CI/CD configuration**
 
-### Использование API клиента
+Project structure:
 
-```python
-from src.utils.api_client import APIClient
-
-client = APIClient(base_url="http://localhost:3000")
-response = client.get("api/data")
-print(response.json())
+```
+demo-app/
+e2e-framework/
+docs/
+docker-compose.yml
 ```
 
-## Конфигурация
+---
 
-Фреймворк поддерживает несколько окружений:
+# Demo Application
 
-- **dev**: Локальное окружение (`config/environments/dev.yaml`).
-- **prod**: Продуктивное окружение (`config/environments/prod.yaml`).
+The `demo-app` directory contains a lightweight web application used as the system under test.
 
-Пример конфигурации:
+It includes:
 
-```yaml
-base_url: "http://localhost:3000"
-browser: "chromium"
-headless: false
-timeouts:
-  default: 10000
-service_wait_seconds: 30
+- HTML interface
+- simple JavaScript logic
+- minimal backend server
+
+This allows stable and reproducible UI and API tests.
+
+---
+
+# E2E Framework
+
+The framework itself is located in the `e2e-framework` directory.
+
+Main components:
+
+## Components
+
+Reusable UI elements:
+
+- buttons
+- inputs
+
+## Core
+
+Core utilities such as browser initialization.
+
+Example:
+
+- BrowserFactory
+
+## Locators
+
+Contains selectors used for UI testing.
+
+Separate locator files are created for different applications.
+
+## Pages
+
+Implements **Page Object Model** design pattern.
+
+Each page class represents a specific web page.
+
+## Tests
+
+Test suites divided into:
+
+- API tests
+- UI tests
+
+Each test group targets a specific application.
+
+---
+
+# Configuration System
+
+Framework configuration is stored in YAML files.
+
+Example configurations:
+
+- demoapp.local.yaml
+- demoapp.docker.yaml
+- demoqa.local.yaml
+
+Configuration allows switching environments easily.
+
+---
+
+# Test Execution
+
+Tests are executed using Pytest.
+
+Examples:
+
+```
+pytest
+pytest -k api
+pytest -m app_demoapp
 ```
 
-## CI/CD
+---
 
-Фреймворк интегрирован с GitHub Actions для автоматического запуска тестов. Рабочий процесс включает:
+# Docker Integration
 
-- Запуск Docker Compose.
-- Выполнение тестов.
-- Загрузка артефактов.
+The entire environment can be started using Docker.
 
-## Дополнительные возможности
+```
+docker compose build
+docker compose up
+```
 
-- **Параметризация тестов**: Поддержка параметризованных тестов.
-- **Кросс-браузерное тестирование**: Поддержка нескольких браузеров.
-- **Интеграция с внешними приложениями**: Возможность тестирования внешних веб-приложений.
+This ensures the same environment for all developers and CI pipelines.
 
-## Заметки
+---
 
-- Фреймворк универсален и подходит для любых веб-приложений благодаря PageFactory + компонентам + настройкам через конфиг.
-- Основные тесты пишутся на локальном demo-app для стабильности.
-- Дополнительно можно демонстрировать тесты на внешних веб-приложениях (например, DemoQA).
+# Test Reports
+
+Allure is used for generating interactive reports.
+
+```
+allure serve reports/allure-results
+```
+
+Reports include:
+
+- test results
+- execution timeline
+- logs
+- attachments
+
+---
+
+# Continuous Integration
+
+GitHub Actions pipeline automatically:
+
+1. builds containers
+2. runs tests
+3. stores artifacts
+
+---
+
+# Future Improvements
+
+Possible future extensions:
+
+- parallel test execution
+- integration with test management systems
+- automatic defect creation
+- performance testing support
