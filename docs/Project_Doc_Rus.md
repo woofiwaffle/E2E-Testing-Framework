@@ -78,7 +78,7 @@ B --> C[Docker Compose Environment]
 
 C --> D[E2E Testing Framework]
 
-D --> E[Test Layer]
+D --> E[Test Layer<br>Web Application Under Test]
 
 E --> F[Page Object Layer]
 F --> G[Core Layer<br>BrowserFactory]
@@ -86,9 +86,6 @@ G --> H[Browser<br>Chromium / Chrome]
 
 H --> I[UI Tests<br>Playwright]
 E --> J[API Tests<br>Pytest + Requests]
-
-I --> K[Web Application Under Test]
-J --> K
 
 I --> L[Test Artifacts<br>Logs / Screenshots]
 J --> L
