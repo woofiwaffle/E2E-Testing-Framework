@@ -70,17 +70,30 @@ docker-compose.yml
 Диаграмма Архитектуры: 
 
 ```mermaid
-graph TD
+flowchart TD
 
-A[GitHub Actions CI] --> B[Docker Environment]
-B --> C[Demo Application]
-B --> D[E2E Framework]
+A[Developer / CI Pipeline] --> B[GitHub Actions]
 
-D --> E[UI Tests]
-D --> F[API Tests]
+B --> C[Docker Compose Environment]
 
-E --> G[Allure Reports]
-F --> G
+C --> D[E2E Testing Framework]
+
+D --> E[Test Layer]
+
+E --> F[Page Object Layer]
+F --> G[Core Layer<br>BrowserFactory]
+G --> H[Browser<br>Chromium / Chrome]
+
+H --> I[UI Tests<br>Playwright]
+E --> J[API Tests<br>Pytest + Requests]
+
+I --> K[Web Application Under Test]
+E --> K
+
+I --> L[Test Artifacts<br>Logs / Screenshots]
+J --> L
+
+L --> M[Allure Reports]
 ```
 
 ---
