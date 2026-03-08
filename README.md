@@ -1,4 +1,138 @@
-# E2E Testing Framework
+## E2E Testing Framework (Фреймворк для сквозного тестирования веб-приложений)
+
+Фреймворк для сквозного (E2E) тестирования веб-приложений с использованием контейнеризации.
+
+Проект демонстрирует, как можно выполнять автоматизированные тесты браузера и API в воспроизводимой среде с помощью Docker, Playwright, Pytest и системы отчетности Allure.
+
+---
+
+### Обзор проекта
+
+Репозиторий содержит:
+
+- **demo-app** — простое веб-приложение, используемое в качестве тестируемой системы (SUT)
+- **e2e-framework** — фреймворк для автоматизированного тестирования пользовательского интерфейса и API
+- **docker-compose** — контейнеризированная среда для запуска приложения и тестов
+- **GitHub Actions CI/CD** — автоматизированное выполнение тестов в конвейере
+- **Allure reports** — визуальные отчеты о выполнении тестов
+
+Фреймворк разработан как **универсальный**, то есть его можно адаптировать для тестирования различных веб-приложений путем настройки локаторов, объектов страниц и параметров среды.
+
+---
+
+## Быстрый старт
+
+### Сборка контейнеров Docker
+
+```bash
+docker compose -f docker-compose.yml build
+```
+
+### Запуск среды
+
+```bash
+docker compose -f docker-compose.yml up
+```
+
+Эта команда запускает:
+
+- демонстрационное приложение
+- контейнер для запуска сквозных тестов
+
+---
+
+## Запуск тестов вручную
+
+Активация виртуальной среды (Windows PowerShell):
+
+```bash
+. .\.venv\Scripts\Activate.ps1
+```
+
+Запуск всех тестов:
+
+```bash
+pytest
+```
+
+Запуск только тестов API:
+
+```bash
+pytest -k api -s
+```
+
+Запуск тестов DemoApp:
+
+```bash
+pytest -m app_demoapp --config=demoapp.local.yaml
+```
+
+Запуск тестов DemoQA:
+
+```bash
+pytest -m app_demoqa --config=demoqa.local.yaml
+```
+
+---
+
+## Отчет Allure
+
+Перед использованием Allure убедитесь:
+
+- Java установлена
+- Allure CLI доступен в PATH
+
+Сгенерируйте и откройте отчет:
+
+```bash
+allure serve reports/allure-results
+```
+
+---
+
+## Команды Docker
+
+Остановка Окружение:
+
+```bash
+docker compose down -v --remove-orphans
+```
+
+Пересборка образов без кэша:
+
+```bash
+docker compose build --no-cache
+```
+
+Запуск сервисов:
+
+```bash
+docker compose up
+```
+
+Запуск конкретных сервисов:
+
+```bash
+docker compose up -d demo-app
+docker compose up e2e-demoapp
+docker compose up e2e-demoqa
+```
+
+---
+
+## Примечания
+
+Основной набор тестов выполняется на **локальном демонстрационном приложении**, что обеспечивает стабильную и воспроизводимую среду тестирования.
+
+Дополнительно фреймворк демонстрируется на **внешнем веб-приложении DemoQA**, чтобы показать возможность применения разработанного решения для тестирования сторонних веб-систем без изменения архитектуры фреймворка.
+
+Такой подход демонстрирует универсальность и переносимость разработанного тестового фреймворка.
+
+---
+---
+---
+
+## E2E Testing Framework
 
 Framework for end‑to‑end (E2E) testing of web applications using containerization.
 
@@ -6,7 +140,7 @@ The project demonstrates how automated browser and API tests can be executed in 
 
 ---
 
-## Project Overview
+### Project Overview
 
 The repository contains:
 
@@ -20,15 +154,15 @@ The framework is designed to be **universal**, meaning it can be adapted to test
 
 ---
 
-# Quick Start
+## Quick Start
 
-## Build Docker containers
+### Build Docker containers
 
 ```bash
 docker compose -f docker-compose.yml build
 ```
 
-## Start the environment
+### Start the environment
 
 ```bash
 docker compose -f docker-compose.yml up
@@ -41,7 +175,7 @@ This command starts:
 
 ---
 
-# Running Tests Manually
+## Running Tests Manually
 
 Activate virtual environment (Windows PowerShell):
 
@@ -75,7 +209,7 @@ pytest -m app_demoqa --config=demoqa.local.yaml
 
 ---
 
-# Allure Report
+## Allure Report
 
 Before using Allure ensure:
 
@@ -90,7 +224,7 @@ allure serve reports/allure-results
 
 ---
 
-# Docker Commands
+## Docker Commands
 
 Stop environment:
 
@@ -120,8 +254,10 @@ docker compose up e2e-demoqa
 
 ---
 
-# Notes
+## Notes
 
-Primary tests are executed against the **local demo-app** to ensure stability and reproducibility.
+The primary test suite is executed against a **local demo application**, which provides a stable and reproducible testing environment.
 
-Additionally, tests can be executed against external applications to demonstrate framework flexibility.
+Additionally, the framework is demonstrated on an **external web application (DemoQA)** to show that the framework can be applied to third-party systems without modifying the core architecture.
+
+This approach highlights the flexibility and portability of the testing framework.
