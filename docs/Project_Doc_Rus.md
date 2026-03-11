@@ -68,35 +68,7 @@ docker-compose.yml
 ```
 
 Диаграмма Архитектуры: 
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '14px'}}}%%
-flowchart TD
-    subgraph ExecutionEnvironment ["Среда выполнения"]
-        Runner["E2E Runner <br>(контейнер / задача CI)"]
-    end
-
-    Developer["Разработчик / CI"] -->|"запуск"| Runner
-
-    Runner -->|"чтение конфига"| Config["YAML конфигурация<br>(цель: demoapp / demoqa / другое)"]
-    Config -->|"подготовка"| Setup["Setup"]
-    Setup -->|"запуск тестов"| TestExec["Выполнение тестов (pytest/playwright)"]
-
-    TestExec --> Decision{"Тип<br>теста?"}
-
-    Decision -->UITests["UI-тесты<br/>Playwright + Page Objects"]
-    Decision -->APITests["API-тесты<br/>requests / httpx"]
-
-    UITests --> PageObjects["Page Objects"]
-    PageObjects --> BrowserFactory["BrowserFactory"]
-    BrowserFactory --> Browser["Браузер<br/>(Chromium / headless)"]
-    Browser -.->|"автоматизация DOM"| SUT["Веб-приложение (SUT)"]
-
-    APITests --> APIClient["API клиент / утилиты"]
-    APIClient -.->|"HTTP-запросы"| SUT
-
-    UITests --> Artifacts["Сбор артефактов<br/>скриншоты, логи"]
-```
+![Диаграмма архитектуры](ArchD_Rus.drawio.png)
 
 ---
 
