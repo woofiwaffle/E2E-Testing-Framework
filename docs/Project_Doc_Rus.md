@@ -70,47 +70,32 @@ docker-compose.yml
 Диаграмма Архитектуры: 
 
 ```mermaid
-graph LR
-  subgraph Докеризированная среда
-    subgraph "Контейнер Demo-App"
-      DemoUI[Frontend]
-      DemoAPI[Backend API]
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '14px'}}}%%
+flowchart TD
+    subgraph ExecutionEnvironment ["Среда выполнения"]
+        Runner["E2E Runner <br>(контейнер / задача CI)"]
     end
-    subgraph "Контейнер E2E-тестов"
-      subgraph "E2E-фреймворк"
-        Config[(YAML конфигурации)]
-        BrowserFactory[/BrowserFactory/]
-        Locators[Locators]
-        PageObjects[Page Objects]
-        UIComponents[UI-компоненты]
-        UITests[Testы UI]
-        APITests[Testы API]
-        Reporting[Allure]
-        Logging[Логи и скриншоты]
-      end
-    end
-  end
 
-  BrowserFactory -->|инициализирует браузер| UITests
-  PageObjects -->|используются в| UITests
-  Locators -->|используются в| PageObjects
-  UIComponents -->|переиспользуются в| PageObjects
-  Config -->|определяет окружение| UITests
-  Config -->|определяет окружение| APITests
-  UITests -->|тестируют UI Demo-App| DemoUI
-  APITests -->|тестируют API Demo-App| DemoAPI
-  UITests --> Logging
-  APITests --> Logging
-  Reporting -->|генерирует отчеты| Logging
+    Developer["Разработчик / CI"] -->|"запуск"| Runner
 
-  subgraph "CI/CD (GitHub Actions)"
-    GHActions[GitHub Actions пайплайн]
-  end
-  GHActions -->|стартует сборку и тесты| Docker_COM
-  GHActions -.-> Reporting
+    Runner -->|"чтение конфига"| Config["YAML конфигурация<br>(цель: demoapp / demoqa / другое)"]
+    Config -->|"подготовка"| Setup["Setup"]
+    Setup -->|"запуск тестов"| TestExec["Выполнение тестов (pytest/playwright)"]
 
-  Docker_COM[[Docker Compose]] --> "Контейнер Demo-App"
-  Docker_COM --> "Контейнер E2E-тестов"
+    TestExec --> Decision{"Тип<br>теста?"}
+
+    Decision -->UITests["UI-тесты<br/>Playwright + Page Objects"]
+    Decision -->APITests["API-тесты<br/>requests / httpx"]
+
+    UITests --> PageObjects["Page Objects"]
+    PageObjects --> BrowserFactory["BrowserFactory"]
+    BrowserFactory --> Browser["Браузер<br/>(Chromium / headless)"]
+    Browser -.->|"автоматизация DOM"| SUT["Веб-приложение (SUT)"]
+
+    APITests --> APIClient["API клиент / утилиты"]
+    APIClient -.->|"HTTP-запросы"| SUT
+
+    UITests --> Artifacts["Сбор артефактов<br/>скриншоты, логи"]
 ```
 
 ---

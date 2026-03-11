@@ -69,6 +69,42 @@ docker-compose.yml
 
 Architecture Diagram:
 
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '14px'}}}%%
+flowchart TD
+    subgraph ExecutionEnvironment ["Runner"]
+        Runner["E2E Runner (container / CI job)"]
+    end
+
+    Developer["Developer / CI"] -->|"trigger"| Runner
+
+    Runner -->|"read config"| Config["YAML configuration<br/>(target: demoapp / demoqa / other)"]
+    Config -->|"setup"| Setup["Setup"]
+    Setup -->|"run tests"| TestExec["Test execution (pytest/playwright)"]
+
+    TestExec --> Decision{"Test<br>type?"}
+
+    Decision -->UITests["UI tests<br/>Playwright + Page Objects"]
+    Decision -->APITests["API tests<br/>requests / httpx"]
+
+    UITests --> PageObjects["Page Objects"]
+    PageObjects --> BrowserFactory["BrowserFactory"]
+    BrowserFactory --> Browser["Browser<br>(Chromium / headless)"]
+    Browser -.->|"automation DOM"| SUT["Web Application Under Test (SUT)"]
+
+    APITests --> APIClient["API Client / Helpers"]
+    APIClient -.->|"HTTP requests"| SUT
+
+    UITests --> Artifacts["Collecting artifacts<br/>screenshots, logs"]
+    APITests --> Artifacts
+    TestExec -->|"in case<br> of errors"| Artifacts
+
+    Artifacts -->|"store to volume <br> workspace"| Storage["Artifact storage (reports/allure-results)"]
+    Storage -->|"generate"| Allure["Allure Report"]
+    Allure -->|"results / link"| Developer
+
+    TestExec -->|"teardown"| Teardown["Teardown<br>(stop services, cleanup)"]
+```
 
 ---
 
