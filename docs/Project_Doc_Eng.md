@@ -67,8 +67,8 @@ docs/
 docker-compose.yml
 ```
 
-Architecture Diagram:
-![Architecture Diagram](ArchD_Eng.drawio.png)
+![Architecture diagram](diagrams/ArchSys_Eng.png)
+*Figure 1. Architectural diagram of the E2E framework*
 
 ---
 
@@ -169,6 +169,9 @@ pytest -k api -s -m app_demoapp --config=demoapp.local.yaml
 pytest -m app_demoapp --config=demoapp.local.yaml
 ```
 
+![Test Execution Flow Diagram](diagrams/TestExecFlow_Eng.drawio.png)
+*Figure 2. Test Execution Process*
+
 ---
 
 ## Integration with Docker
@@ -188,6 +191,9 @@ docker compose up e2e-demoqa
 
 Containerization makes it easy to integrate the framework into CI/CD pipelines.
 
+![Deployment Diagram](diagrams/DeploymentD_Eng.png)
+*Figure 3. Deploying components in Docker and CI*
+
 ---
 
 ## Test Reports
@@ -204,6 +210,9 @@ The reports include:
 - timeline of execution
 - logs
 - attachments
+
+![Artifact Processing Diagram](diagrams/ArtifactFlow_Eng.drawio.png)
+*Figure 4. Artifact Flow and Allure Report Generation*
 
 ---
 

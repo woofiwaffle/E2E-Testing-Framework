@@ -67,8 +67,8 @@ docs/
 docker-compose.yml
 ```
 
-Диаграмма Архитектуры: 
-![Диаграмма архитектуры](ArchD_Rus.drawio.png)
+![Архитектурная диаграмма](diagrams/ArchSys_Rus.png)
+*Рисунок 1. Архитектурная диаграмма E2E-фреймворка*
 
 ---
 
@@ -169,6 +169,9 @@ pytest -k api -s -m app_demoapp --config=demoapp.local.yaml
 pytest -m app_demoapp --config=demoapp.local.yaml
 ```
 
+![Диаграмма потока выполнения тестов](diagrams/TestExecFlow_Rus.drawio.png)
+*Рисунок 2. Процесс выполнения тестов*
+
 ---
 
 ## Интеграция с Docker
@@ -188,6 +191,9 @@ docker compose up e2e-demoqa
 
 Контейнеризация позволяет легко интегрировать фреймворк в конвейеры CI/CD.
 
+![Диаграмма развёртывания](diagrams/DeploymentD_Rus.png)
+*Рисунок 3. Развёртывание компонентов в Docker и CI*
+
 ---
 
 ## Отчеты о тестировании
@@ -204,6 +210,9 @@ allure serve reports/allure-results
 - временную шкалу выполнения
 - логи
 - вложения
+
+![Схема обработки артефактов](diagrams/ArtifactFlow_Rus.drawio.png)
+*Рисунок 4. Поток артефактов и генерация отчётов Allure*
 
 ---
 

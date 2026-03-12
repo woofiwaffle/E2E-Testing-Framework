@@ -1,8 +1,13 @@
 /e2e-framework/.pytest_cache/
+/e2e-framework/.venv/
+
+/e2e-framework/src/__pycache__/
+
 /e2e-framework/src/components/__pycache__/
 /e2e-framework/src/core/__pycache__/
 /e2e-framework/src/locators/__pycache__/
 /e2e-framework/src/pages/__pycache__/
+/e2e-framework/src/utils/__pycache__/
 
 /e2e-framework/src/tests/__pycache__/
 /e2e-framework/src/tests/demoapp/__pycache__/
@@ -13,8 +18,7 @@
 /e2e-framework/src/tests/demoqa/test_ui/__pycache__/
 /e2e-framework/src/tests/demoqa/test_api/__pycache__/
 
-/e2e-framework/src/utils/__pycache__/
-/e2e-framework/.venv/
-
 /demo-app/node_modules/
 /demo-app/package-lock.json
+
+/text.txt
