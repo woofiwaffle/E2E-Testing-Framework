@@ -1,0 +1,14 @@
+2026-05-14 15:39:50 [INFO] conftest: ================================================================================
+2026-05-14 15:39:50 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_open
+2026-05-14 15:39:50 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
+2026-05-14 15:39:50 [INFO] src.core.browser_factory: Starting Playwright
+2026-05-14 15:39:50 [DEBUG] asyncio: Using selector: EpollSelector
+2026-05-14 15:39:51 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-05-14 15:39:51 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-05-14 15:39:51 [DEBUG] src.core.browser_factory: Opening new page
+2026-05-14 15:39:52 [DEBUG] src.core.browser_factory: Browser page ready
+2026-05-14 15:39:52 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-05-14 15:39:54 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-05-14 15:39:55 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
+2026-05-14 15:39:55 [INFO] src.pages.base_page: Is visible div.practice-form-wrapper -> True
+2026-05-14 15:39:55 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_open

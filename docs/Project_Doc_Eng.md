@@ -1,29 +1,28 @@
-## Framework for end—to-end testing - Project documentation
+## End-to-End Testing Framework — Project Documentation
 
 ### Introduction
 
 This project implements a framework for automated testing of web applications.
 
-The main goal of the project is to develop a reusable environment that simplifies the creation, execution and analysis of end—to-end tests.
+The main goal of the project is to develop a reusable environment that simplifies the creation, execution, and analysis of end-to-end tests.
 
-The testing environment is focused on providing a reproducible testing environment by combining automated browser testing with containerization technologies.
+The framework is built as a full-fledged software system. Its foundation is the separation of test logic, user interface components, configuration, execution infrastructure, and reporting.
 
-The system allows you to automate user interface and API testing, manage configuration, and integrate with modern development pipelines.
-
-The main tasks of the testing environment:
+The main tasks of the testing environment are:
 
 - automated user interface testing
 - automated API testing
-- containerized runtime environment
+- working with local and external web applications
+- containerized execution environment
 - configuration management using YAML profiles
-- integration with CI/CD
-- test reporting and analysis of results
+- CI/CD integration
+- test reporting and results analysis
 
 The framework is implemented using Python and modern test automation tools.
 
 ---
 
-## Technology stack
+## Technology Stack
 
 - Python 3.12
 - Pytest
@@ -34,153 +33,223 @@ The framework is implemented using Python and modern test automation tools.
 
 Additional libraries:
 
-- requests
-- pyyaml
+- `requests`
+- `pyyaml`
 
 ---
 
-## Architecture
+## Demo Application
 
-The system consists of three main components:
-
-1. **Demo application**
-2. **Framework for end-to-end testing**
-3. **CI/CD documentation and configuration**
-
-The architecture of the framework is designed to provide modularity and extensibility.
-
-The main elements of the framework include:
-
-- a layer of interaction with the browser
-- configuration module
-- the object page layer
-- reusable user interface components
-- automated test suites
-- utilities for creating reports and logging
-
-Project structure:
-
-```
-demo-app/
-e2e-framework/
-docs/
-docker-compose.yml
-```
-
-![Architecture diagram](diagrams/ArchSys_Eng.png)
-*Figure 1. Architectural diagram of the E2E framework*
-
----
-
-## Demo application
-
-The demo-app directory contains a lightweight web application used as a test system.
+The `demo-app` directory contains a lightweight web application used as the system under test.
 
 It includes:
 
 - HTML interface
 - simple JavaScript logic
-- minimal backend server
+- a minimal backend server
 
-This allows for stable and reproducible user interface and API tests.
-
----
-
-## E2E Framework
-
-The framework itself is located in the 'e2e-framework` directory.
-
-The framework includes several functional modules responsible for various aspects of automated testing.
-
-Main components:
-
-### Components
-
-Reusable user interface elements:
-
-- buttons
-- input fields
-
-These components help simplify interaction with user interface elements and reduce code duplication.
-
-### Core
-
-Basic utilities such as browser initialization.
-
-Example:
-
-- BrowserFactory — creates and configures browser instances.
-
-### Locators
-
-It contains selectors used for testing the user interface.
-
-Separate locator files are created for different applications.
-
-### Pages
-
-Implements the **Page Object Model (POM)** design pattern.
-
-Each page class represents a specific web page and encapsulates the logic of interaction with the user interface.
-
-### Tests
-
-The test suites are divided into:
-
-- API tests
-- User interface tests
-
-Each test group is targeted at a specific application or testing environment.
+This makes it possible to perform stable and reproducible UI and API tests.
 
 ---
 
-### Configuration system
+## Architecture
 
-The framework supports configuration using **YAML files and environment variables**, which allows you to flexibly switch between different testing environments.
+The framework architecture is built as a multi-layered system in which the test layer, interface abstraction layer, core, and infrastructure are separated by responsibility.
 
-Configuration examples:
+![Architectural Diagram](diagrams/ArchSys.drawio.png)  
+*Figure 1. Multi-layer architecture of the framework*
 
-- demoapp.local.yaml
-- demoapp.docker.yaml
-- demoqa.local.yaml
+### Main Architectural Elements
 
-The configuration makes it easy to switch between environments.
+The system includes four logical layers:
 
-### Logging and testing artifacts
+1. **Test Layer**  
+   This layer contains business scenarios written in Pytest.  
+   It describes the logic of the checks rather than technical browser operations.
 
-During the execution of tests, the framework can collect useful artifacts such as:
+2. **Interface Abstraction Layer**  
+   This layer contains the Page Object Model, UI components, and locators.  
+   It serves as a bridge between the tests and the system under test.
+
+3. **Core and Configuration Layer**  
+   This layer includes BrowserFactory, ConfigReader, and supporting mechanisms for browser and settings management.  
+   Configuration is defined through YAML profiles, which makes it possible to use different environments without changing the test source code.
+
+4. **Logging and Reporting Layer**  
+   This layer collects logs, screenshots, and testing artifacts, after which Allure reports are generated.
+
+The architecture also explicitly includes the test targets:
+
+- local web application
+- external web resource
+
+---
+
+## Component Subsystem
+
+After the overall architecture is described, the system is decomposed into functional subsystems.
+
+![Framework Component Diagram](diagrams/DiagComp.png)  
+*Figure 2. Component diagram*
+
+### Main Subsystems
+
+1. **Visual Modeling Subsystem**  
+   Includes the Page Object Model, UI components, and locators.
+
+2. **Browser Session and Configuration Management Subsystem**  
+   Responsible for YAML profiles, ConfigReader, and BrowserFactory.
+
+3. **Test Execution Subsystem**  
+   Contains the test engine and API client, providing support for UI and API testing.
+
+4. **Telemetry Subsystem**  
+   Combines logging and the Allure reporter.
+
+### Component Purpose
+
+- **Page Objects** hide DOM details and represent pages as objects.
+- **Locators** store selectors separately from test logic.
+- **UI Components** allow reuse of frequently used interface elements.
+- **ConfigReader** loads runtime parameters from YAML.
+- **BrowserFactory** creates and configures the browser session.
+- **API Client** handles HTTP requests and backend logic checks.
+- **Logger** records the test execution flow.
+- **Allure Reporter** generates a visual report of test runs.
+
+---
+
+## Page Object Model
+
+The Page Object Model pattern is used for interacting with the user interface.
+
+![POM Architecture](diagrams/POM.drawio.png)  
+*Figure 3. Page Object Model architecture*
+
+### How POM Is Organized
+
+- **Locators** are placed in separate classes and stored centrally.
+- **Base Page** contains common low-level browser actions.
+- **Page classes** inherit from the base page and implement user scenarios.
+- **UI Components** are used as separate reusable interface blocks.
+
+### Benefits of This Approach
+
+- reduces code duplication
+- simplifies test maintenance
+- makes scenarios more readable
+- reduces dependency on DOM tree changes
+- allows pages to be assembled from ready-made elements
+
+---
+
+## Browser and Configuration Management
+
+The framework uses configuration as data.  
+Runtime parameters are defined separately from the test code, which makes the system more flexible and easier to use in different environments.
+
+### YAML Configuration
+
+YAML profiles define:
+
+- base URL
+- browser type
+- run mode
+- window size
+- global timeouts
+- environment parameters
+
+Example profiles:
+
+- `demoapp.local.yaml`
+- `demoapp.docker.yaml`
+- `demoqa.local.yaml`
+
+### Role of ConfigReader
+
+`ConfigReader` loads the required profile, validates the parameters, and passes them further into the execution system.
+
+### Role of BrowserFactory
+
+`BrowserFactory` creates an isolated browser context based on the configuration.  
+This makes it possible to run each test in a clean session without interference from previous runs.
+
+---
+
+## UI and API Testing Support
+
+The framework is built as a hybrid solution and supports two types of checks:
+
+### UI Tests
+
+UI tests verify:
+
+- page rendering correctness
+- interface behavior
+- form and control behavior
+- browser-based user scenarios
+
+### API Tests
+
+API tests verify:
+
+- backend responses
+- data structure
+- status codes
+- correctness of backend business logic
+
+---
+
+## Logging and Reporting
+
+During test execution, the framework collects artifacts that help analyze results and identify error causes.
+
+### What Is Saved
 
 - execution logs
-- screenshots in case of failure
-- test reports
-
-These artifacts help analyze failed tests and improve debugging.
+- screenshots on test failure
+- additional attachments
+- Allure report data
 
 ---
 
-## Running tests
+## Test Execution
 
-The tests are performed using Pytest.
+Tests are executed using Pytest.
 
 Examples:
 
-```
+```bash
 pytest -k api -s -m app_demoapp --config=demoapp.local.yaml
 pytest -m app_demoapp --config=demoapp.local.yaml
 ```
 
-![Test Execution Flow Diagram](diagrams/TestExecFlow_Eng.drawio.png)
-*Figure 2. Test Execution Process*
-
 ---
 
-## Integration with Docker
+## Docker Integration
 
-The test environment can be run inside Docker containers.
+The test environment supports running inside Docker containers.
 
-This approach ensures that the tests are run in a consistent and reproducible environment, regardless of the developer's local configuration.
+![Containerized](diagrams/Docker.drawio.png)
+*Figure 4. Containerized infrastructure diagram*
 
-Examples of commands: 
+What the Diagram Shows
+
+- Test Runner executes tests inside a container
+- the local application is started as a separate service
+- the external web resource is tested through a separate execution path
+- artifacts are saved into logs and reports folders
+- configuration is passed through the CONFIG_FILE variable
+
+Why This Is Needed
+
+- consistent execution conditions
+- environment isolation
+- reproducible results
+- easier transfer between machines
+- readiness for CI/CD integration
+
+Example commands:
 
 ```
 docker compose build
@@ -189,12 +258,7 @@ docker compose up e2e-demoapp
 docker compose up e2e-demoqa
 ```
 
-Containerization makes it easy to integrate the framework into CI/CD pipelines.
-
-![Deployment Diagram](diagrams/DeploymentD_Eng.png)
-*Figure 3. Deploying components in Docker and CI*
-
----
+--- 
 
 ## Test Reports
 
@@ -204,38 +268,40 @@ Allure is used to generate interactive reports.
 allure serve reports/allure-results
 ```
 
-The reports include:
+The report contains:
 
 - test results
-- timeline of execution
+- execution timeline
 - logs
 - attachments
+- screenshots
 
-![Artifact Processing Diagram](diagrams/ArtifactFlow_Eng.drawio.png)
-*Figure 4. Artifact Flow and Allure Report Generation*
+![Artifact flow](diagrams/ArtifactFlow_Rus.drawio.png)
+*Figure 5. Artifact flow and Allure report generation*
+
+--- 
+
+## Continuous Integration
+
+The framework can be connected to a CI/CD pipeline.
+In that case, the automated run may include:
+
+1. building containers
+2. running tests
+3. saving artifacts
+4. publishing reports
 
 ---
 
-## Continuous integration
+## Future Improvements
 
-GitHub Actions Pipeline automatically:
+Possible future directions:
 
-1. creates containers
-2. Runs the tests
-3. Preserves artifacts
-
----
-
-## Future improvements
-
-Possible future extensions:
-
-- parallel execution of tests
 - integration with test management systems
-- automatic creation of defects
+- automatic defect creation
 - support for performance testing
-- closer connection with CI/CD systems and cloud environments
-- using artificial intelligence to analyze test results
-- increasing the level of autonomy of test systems
+- tighter integration with CI/CD and cloud environments
+- use of artificial intelligence for test result analysis
+- increased autonomy of testing systems
 
 ---

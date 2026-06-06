@@ -1,0 +1,20 @@
+2026-05-14 15:40:20 [INFO] conftest: ================================================================================
+2026-05-14 15:40:20 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_empty_submit
+2026-05-14 15:40:20 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
+2026-05-14 15:40:20 [INFO] src.core.browser_factory: Starting Playwright
+2026-05-14 15:40:20 [DEBUG] asyncio: Using selector: EpollSelector
+2026-05-14 15:40:20 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-05-14 15:40:21 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-05-14 15:40:21 [DEBUG] src.core.browser_factory: Opening new page
+2026-05-14 15:40:21 [DEBUG] src.core.browser_factory: Browser page ready
+2026-05-14 15:40:21 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-05-14 15:40:24 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-05-14 15:40:25 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
+2026-05-14 15:40:26 [INFO] conftest: [PAGE][console][warning] [GPT] PubAdsService.setTargeting is deprecated, use googletag.setConfig({targeting: ...}) instead.
+https://goo.gle/gpt-message#170
+2026-05-14 15:40:26 [INFO] src.pages.base_page: Click element: button#submit
+2026-05-14 15:40:26 [INFO] src.pages.base_page: Is visible div#example-modal-sizes-title-lg -> False
+2026-05-14 15:40:27 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_empty_submit
+2026-05-14 15:40:27 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-05-14 15:40:27 [WARNING] conftest: [PAGE][requestfailed] https://2927575f8e0867bd18fce6c4f71084c2.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html - net::ERR_ABORTED
+2026-05-14 15:40:27 [WARNING] conftest: [PAGE][requestfailed] https://cm.g.doubleclick.net/partnerpixels?url=https%3A%2F%2Fdemoqa.com%2Fautomation-practice-form - net::ERR_ABORTED

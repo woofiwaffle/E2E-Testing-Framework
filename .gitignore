@@ -1,8 +1,7 @@
 /e2e-framework/.pytest_cache/
 /e2e-framework/.venv/
 
-/e2e-framework/src/__pycache__/
-
+/e2e-framework/src/__pycache__
 /e2e-framework/src/components/__pycache__/
 /e2e-framework/src/core/__pycache__/
 /e2e-framework/src/locators/__pycache__/
