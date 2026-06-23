@@ -1,0 +1,71 @@
+2026-06-23 19:59:50 [INFO] conftest: ================================================================================
+2026-06-23 19:59:50 [INFO] conftest: START TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_invalid_email
+2026-06-23 19:59:50 [INFO] src.utils.config_reader: Loaded config: config/demoapp.local.yaml
+2026-06-23 19:59:50 [INFO] src.core.browser_factory: Starting Playwright
+2026-06-23 19:59:50 [DEBUG] asyncio: Using selector: EpollSelector
+2026-06-23 19:59:50 [DEBUG] src.core.browser_factory: Launching browser: chromium (headless=True)
+2026-06-23 19:59:50 [DEBUG] src.core.browser_factory: Creating browser context with viewport={'width': 1280, 'height': 1600}
+2026-06-23 19:59:50 [DEBUG] src.core.browser_factory: Opening new page
+2026-06-23 19:59:50 [DEBUG] src.core.browser_factory: Browser page ready
+2026-06-23 19:59:50 [INFO] src.pages.base_page: Open URL: https://demoqa.com/automation-practice-form
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][log] automation-practice-form
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] [GPT] PubAdsService.setTargeting is deprecated, use googletag.setConfig({targeting: ...}) instead.
+https://goo.gle/gpt-message#170
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] [GPT] Using deprecated googletag.encryptedSignalProviders. Please use googletag.secureSignalProviders instead.
+https://goo.gle/gpt-message#155
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:52 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] src.pages.base_page: Wait visible: div.practice-form-wrapper
+2026-06-23 19:59:53 [WARNING] conftest: [PAGE][requestfailed] https://securepubads.g.doubleclick.net/pagead/adview?ai=C7d6KuOU6aqqzKaa44_UPuYGvyA2xt-H7hwHE-IrdpBXYvO3ujg4QASDG-9Z5YMm-yYbEo8gXoAGU7_3OA8gBCeACAKgDAcgDCqoEjgJP0GSEangjX9HEWjEGVR6czWVLm_w7UPt1YKMPlBKmhkmpwjHdT0OUn1_BS_02qgquFtHDpb1IZHaGKhWhEbJnuQbm5nA5hM0eQzPx8jaWotgT_B8i5zAHXslLGEp2iD56kITVksFZNXp1EdaOPBRSX8gRbwTJ1FryOM9k3RmmEwXtigOHihiNjcnr0Sh5ngU2KoZ36NFMc5ZmsczArQ7rxB_t1lJDM_Hihy5QBhZuazXoonU5cb-8UqUOWeCYfSrdaWhdwWYoaDt7sy9OMdBAsyBv8fICpmUfnrtNe450FI4V_oYy0sItz9Cce1wLE9o_r2MzJnq6LZEa4IFLvO_mlNJxKnrPcDXIYLu1v_HABI2pu461BeAEAYgF3ZSU91WSBQQIBBgBkgUECAUYBKAGLoAHhu-r4gGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgH98KxAtgHAPIHBBDohR_SCDIIgGEQARgdMgiKgoCAgICACDoPgECAwICAgICogAKog5AQSL39wTpYsqSRnpOelQNgAfIIG2FkeC1zdWJzeW4tMzUyMDYxNzM0MTY2NTU5MoAKA8gLAaIMA5ABAaoNAlVT4g0TCJHSkZ6TnpUDFSbcuAgducAL2eoNEwjaj5Oek56VAxUm3LgIHbnAC9mIDv___________wHYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXLgocCAASFHB1Yi05ODA3ODIwMzc4NTQ0NjEyGOqqchgBKgo2MTY4NTc2NTA1UAa6FwI4AaoYFwkAAAAAoAsfQRIKNjE2ODU3NjUwNRgBshgJEgK4UBguIgEA0BgB6BgBwhkCCAE&sigh=WCJ_WA_J438&uach_m=%5BUACH%5D&cid=CAQShwIAEQoqgYIn440H1AqgBJWBkZq9YbCirGs90dYE-ts2uIobF1LnYhI7yforaeqZEp_O632N3DYoPQfKo9vH_m5pt7E93hEqO2IUpY5suMWLfztDez3FgilYWwCg_R-ctE4woM-4pwpDh1VWy2b6vQI9LVIA0J_FnJs6Hf4nmyKg40OdcC770hVo95YJg8_6IqMXaj0xWBO4R_QxE4VJkC5KU_zf83TDRnd7pUKZCCdiobglKJjjpNc-ku9uTLg-YO-X8o1LFLs4vM9eHPi_HoAujaDlyA1T0tNDzsotcrS5uZHnxONAeI-y_uuc4YtYOzcfXAObYf5TFlHFZS88elYsLE4MPjE_jRgB&template_id=5000&ebtr=1 - net::ERR_BLOCKED_BY_ORB
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][info] Powered by AMP ⚡ HTML – Version 2605071401000 https://demoqa.com/automation-practice-form
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [WARNING] conftest: [PAGE][requestfailed] https://securepubads.g.doubleclick.net/btr/view?ai=C7d6KuOU6aqqzKaa44_UPuYGvyA2xt-H7hwHE-IrdpBXYvO3ujg4QASDG-9Z5YMm-yYbEo8gXoAGU7_3OA8gBCeACAKgDAcgDCqoEjgJP0GSEangjX9HEWjEGVR6czWVLm_w7UPt1YKMPlBKmhkmpwjHdT0OUn1_BS_02qgquFtHDpb1IZHaGKhWhEbJnuQbm5nA5hM0eQzPx8jaWotgT_B8i5zAHXslLGEp2iD56kITVksFZNXp1EdaOPBRSX8gRbwTJ1FryOM9k3RmmEwXtigOHihiNjcnr0Sh5ngU2KoZ36NFMc5ZmsczArQ7rxB_t1lJDM_Hihy5QBhZuazXoonU5cb-8UqUOWeCYfSrdaWhdwWYoaDt7sy9OMdBAsyBv8fICpmUfnrtNe450FI4V_oYy0sItz9Cce1wLE9o_r2MzJnq6LZEa4IFLvO_mlNJxKnrPcDXIYLu1v_HABI2pu461BeAEAYgF3ZSU91WSBQQIBBgBkgUECAUYBKAGLoAHhu-r4gGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgH98KxAtgHAPIHBBDohR_SCDIIgGEQARgdMgiKgoCAgICACDoPgECAwICAgICogAKog5AQSL39wTpYsqSRnpOelQNgAfIIG2FkeC1zdWJzeW4tMzUyMDYxNzM0MTY2NTU5MoAKA8gLAaIMA5ABAaoNAlVT4g0TCJHSkZ6TnpUDFSbcuAgducAL2eoNEwjaj5Oek56VAxUm3LgIHbnAC9mIDv___________wHYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXLgocCAASFHB1Yi05ODA3ODIwMzc4NTQ0NjEyGOqqchgBKgo2MTY4NTc2NTA1UAa6FwI4AaoYFwkAAAAAoAsfQRIKNjE2ODU3NjUwNRgBshgJEgK4UBguIgEA0BgB6BgBwhkCCAE&sigh=WCJ_WA_J438&uach_m=%5B%5D&cid=CAQShwIAEQoqgYIn440H1AqgBJWBkZq9YbCirGs90dYE-ts2uIobF1LnYhI7yforaeqZEp_O632N3DYoPQfKo9vH_m5pt7E93hEqO2IUpY5suMWLfztDez3FgilYWwCg_R-ctE4woM-4pwpDh1VWy2b6vQI9LVIA0J_FnJs6Hf4nmyKg40OdcC770hVo95YJg8_6IqMXaj0xWBO4R_QxE4VJkC5KU_zf83TDRnd7pUKZCCdiobglKJjjpNc-ku9uTLg-YO-X8o1LFLs4vM9eHPi_HoAujaDlyA1T0tNDzsotcrS5uZHnxONAeI-y_uuc4YtYOzcfXAObYf5TFlHFZS88elYsLE4MPjE_jRgB&template_id=5000&ibtr=1 - net::ERR_BLOCKED_BY_ORB
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] [amp-analytics/transport] Response unparseable or failed to send image request https://securepubads.g.doubleclick.net/btr/view?ai=C7d6KuOU6aqqzKaa44_UPuYGvyA2xt-H7hwHE-IrdpBXYvO3ujg4QASDG-9Z5YMm-yYbEo8gXoAGU7_3OA8gBCeACAKgDAcgDCqoEjgJP0GSEangjX9HEWjEGVR6czWVLm_w7UPt1YKMPlBKmhkmpwjHdT0OUn1_BS_02qgquFtHDpb1IZHaGKhWhEbJnuQbm5nA5hM0eQzPx8jaWotgT_B8i5zAHXslLGEp2iD56kITVksFZNXp1EdaOPBRSX8gRbwTJ1FryOM9k3RmmEwXtigOHihiNjcnr0Sh5ngU2KoZ36NFMc5ZmsczArQ7rxB_t1lJDM_Hihy5QBhZuazXoonU5cb-8UqUOWeCYfSrdaWhdwWYoaDt7sy9OMdBAsyBv8fICpmUfnrtNe450FI4V_oYy0sItz9Cce1wLE9o_r2MzJnq6LZEa4IFLvO_mlNJxKnrPcDXIYLu1v_HABI2pu461BeAEAYgF3ZSU91WSBQQIBBgBkgUECAUYBKAGLoAHhu-r4gGoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgH98KxAtgHAPIHBBDohR_SCDIIgGEQARgdMgiKgoCAgICACDoPgECAwICAgICogAKog5AQSL39wTpYsqSRnpOelQNgAfIIG2FkeC1zdWJzeW4tMzUyMDYxNzM0MTY2NTU5MoAKA8gLAaIMA5ABAaoNAlVT4g0TCJHSkZ6TnpUDFSbcuAgducAL2eoNEwjaj5Oek56VAxUm3LgIHbnAC9mIDv___________wHYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXLgocCAASFHB1Yi05ODA3ODIwMzc4NTQ0NjEyGOqqchgBKgo2MTY4NTc2NTA1UAa6FwI4AaoYFwkAAAAAoAsfQRIKNjE2ODU3NjUwNRgBshgJEgK4UBguIgEA0BgB6BgBwhkCCAE&sigh=WCJ_WA_J438&uach_m=%5B%5D&cid=CAQShwIAEQoqgYIn440H1AqgBJWBkZq9YbCirGs90dYE-ts2uIobF1LnYhI7yforaeqZEp_O632N3DYoPQfKo9vH_m5pt7E93hEqO2IUpY5suMWLfztDez3FgilYWwCg_R-ctE4woM-4pwpDh1VWy2b6vQI9LVIA0J_FnJs6Hf4nmyKg40OdcC770hVo95YJg8_6IqMXaj0xWBO4R_QxE4VJkC5KU_zf83TDRnd7pUKZCCdiobglKJjjpNc-ku9uTLg-YO-X8o1LFLs4vM9eHPi_HoAujaDlyA1T0tNDzsotcrS5uZHnxONAeI-y_uuc4YtYOzcfXAObYf5TFlHFZS88elYsLE4MPjE_jRgB&template_id=5000&ibtr=1
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:53 [INFO] conftest: [PAGE][console][warning] Third-party cookie will be blocked. Learn more in the Issues tab.
+2026-06-23 19:59:54 [INFO] src.pages.base_page: Fill element: input#firstName with value='Ivan'
+2026-06-23 19:59:55 [INFO] src.pages.base_page: Fill element: input#lastName with value='Petrov'
+2026-06-23 19:59:56 [INFO] src.pages.base_page: Fill element: input#userEmail with value='invalid-email'
+2026-06-23 19:59:56 [INFO] src.pages.base_page: Click hidden input via JS: input#gender-radio-1
+2026-06-23 19:59:57 [INFO] src.pages.base_page: Fill element: input#userNumber with value='9998887776'
+2026-06-23 19:59:58 [INFO] src.pages.base_page: Fill element: textarea#currentAddress with value='Test address'
+2026-06-23 19:59:59 [INFO] src.pages.base_page: Click element: button#submit
+2026-06-23 19:59:59 [INFO] src.pages.base_page: Is visible div#example-modal-sizes-title-lg -> False
+2026-06-23 19:59:59 [INFO] conftest: END TEST: src/tests/demoqa/test_ui/test_demoqa_form.py::test_demoqa_form_invalid_email
